@@ -1,77 +1,32 @@
-
-window.onload = function (): void {
-    placeDivs();
-    let table: HTMLTableElement = document.createElement("table");
-    let row: HTMLTableRowElement = document.createElement("tr");
-    let column: HTMLTableCellElement = document.createElement("td");
-    table.appendChild(row);
-    row.appendChild(column);
-    document.body.appendChild(table);
-};
-
-function placeDivs(): void {
-    let rice: number = 1;
-    for (let i: number = 0; i < 64; i++) {
-        let element: HTMLElement = document.createElement("div");
-
-        if (i % 2 == 0) {
-            element.className = "board white";
-        } else {
-            element.className = "board black";
+document.addEventListener('DOMContentLoaded', function () {
+    let field = 0;
+    let line = 0;
+    let rice = 1;
+    for (field = 0; field < 64; field++) {
+        let div = document.createElement("div");
+        div.innerText = "" + rice;
+        rice = rice * 2;
+        document.body.appendChild(div);
+        if (field % 8 == 0) {
+            line = line + 1;
         }
-
-        element.innerText = "" + rice;
-        rice *= 2;
-        document.body.appendChild(element);
+        if (line % 2 == 0) {
+            if (field % 2 != 0) {
+                div.style.backgroundColor = "black";
+                div.style.color = "white";
+            }
+            else {
+                div.style.backgroundColor = "white";
+            }
+        }
+        else {
+            if (field % 2 != 0) { // Modulo des Felds ungerade
+                div.style.backgroundColor = "white"; // Bedingung erfüllt -> Farbe1 ausführen
+            }
+            else {
+                div.style.backgroundColor = "black"; // Bedingung nicht erfüllt -> Farbe2 ausführen
+            }
+        }
     }
-}
-
-/*Versuch 2
-for (var i=0; i< 64; i++){
-    document.getElementById("chessboard").appendChild(document.createElement("div")).style.backgroundColor = parseInt((i / 8) + i) % 2 == 0 ? '#ffffff' : 'white';    
-}
-*/
-
-
-/*Versuch 3
- var chessboard = function(size){
-    var hash = '#'
-    var space = '_'
-    for (var i = 0; i < size; i++) 
-    {        
-
-        hash += '\n'
-
-        for (var j = 0; j < size; j++) 
-        {
-        if((i +j) % 2 == 0)
-        {
-        hash  += space
-        }
-        else
-        {
-        hash  += "#"
-        }
-    };
-
-};
-
-console.log(hash)
-}(8)
-
-*/
-
-/*Versuch 4
-
-var x=8;
-var y=8;
-
-var chessboard = document.getElementById("chessBoard");
-
-for (var i=0; i<y; i++){
-    var row = chessboard.appendChild(document.createElement("div"));
-    for (var j=0; j<x; j++){
-        row.appendChild(document.createElement("span"));
-    }
-}
-*/
+});
+//# sourceMappingURL=chess.js.map
