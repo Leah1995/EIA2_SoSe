@@ -1,0 +1,46 @@
+div {
+	width: 10em;
+	height: 10em;
+	padding-top: 5em;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+#Draw {
+	float: left;
+	position: relative;
+	top: 5em;
+	left: 5em;
+	background-color: blue;
+	border: 4px solid black;
+}
+
+#Filed {
+	padding-top: 1em;
+	height: 11em;
+	float: left;
+	position: relative;
+	top: 3em;
+	left: 5em;
+	background-color: green;
+	border: 4px black solid;
+	display: none;
+}
+
+#Hand {
+	position: absolute;
+	bottom: 5em;
+	left: 5em;
+	width: auto;
+	height: auto;
+	padding: 1em;
+}
+
+.Handkarten {
+	border: 5px solid black;
+	font-weight: 500;
+	display: relative;
+	float: left;
+	margin: 1em;
+	
+}

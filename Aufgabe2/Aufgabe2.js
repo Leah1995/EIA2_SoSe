@@ -1,25 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var field = 0;
-    var line = 0;
-    var rice = 1;
-    for (field = 0; field < 64; field++) { //Feld zwischen 0 und 64 (8x8=64)
+    var field = 0; // vom "ersten" Feld  an
+    var line = 0; // von der "ersten" Linie an
+    var rice = 1; // Reisk�rner von hier an 1
+    for (field = 0; field < 64; field++) {
         var div = document.createElement("div");
-        div.innerText = "" + rice; // Anzahl der Reiskörner einfügen
-        rice = rice * 2; //jeweils das Doppelte hinzufügen
+        div.innerText = "" + rice;
+        rice = rice * 2; // Anzahl verdoppeln
         document.body.appendChild(div);
         if (field % 8 == 0) {
             line = line + 1;
         }
-        if (line % 2 == 0) { //Modulo des Feldes gerade
-            if (field % 2 != 0) { //Modulo des Feldes ungerade
-                div.style.backgroundColor = "black"; // Bedingung erf�llt -> Farbe2 ausf�hren
+        if (line % 2 == 0) {
+            if (field % 2 != 0) {
+                div.style.backgroundColor = "black";
+                div.style.color = "white";
             }
             else {
-                div.style.backgroundColor = "white"; // Bedingung nicht erf�llt -> Farbe1 ausf�hren
+                div.style.backgroundColor = "white";
             }
         }
         else {
-            if (field % 2 != 0) { //Modulo des Feldes ungerade
+            if (field % 2 != 0) {
                 div.style.backgroundColor = "white"; // Bedingung erf�llt -> Farbe1 ausf�hren
             }
             else {

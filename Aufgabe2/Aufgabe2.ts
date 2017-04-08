@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let field = 0;
-    let line = 0;
-    let rice = 1;
-    for (field = 0; field < 64; field++) {
+    let field = 0; // vom "ersten" Feld  an
+    let line = 0; // von der "ersten" Linie an
+    let rice = 1; // Reiskörner von hier an 1
+    for (field = 0; field < 64; field++) { // Felder zwischen dem "ersten" und dem "letzten"
         let div = document.createElement("div");
         div.innerText = "" + rice;
-        rice = rice * 2;
+        rice = rice * 2; // Anzahl verdoppeln
         document.body.appendChild(div);
-        if (field % 8 == 0) {
+        if (field % 8 == 0) { // Modulo anwenden
             line = line + 1;
         }
         if (line % 2 == 0) {
