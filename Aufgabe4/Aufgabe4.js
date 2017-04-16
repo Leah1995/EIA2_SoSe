@@ -1,9 +1,9 @@
-var L4_Canvas;
-(function(L4_Canvas) {
+var L4_Blumenwiese;
+(function(L4_Blumenwiese) {
 	window.addEventListener("load", init);
 	let crc2;
 	function init(_event) {
-		let canvas;
+		var canvas;
 		canvas = document.getElementsByTagName("canvas")[0];
 		console.log(canvas);
 		crc2 = canvas.getContext("2d");
@@ -113,6 +113,7 @@ var L4_Canvas;
 			crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
 			crc2.fillStyle = _stamenColor;
 			crc2.fill();
+			
 		}
 		function drawDaisy(_x, _y, _stalkColor, _stamenColor, _petalColor) {
 			crc2.beginPath();
@@ -162,8 +163,9 @@ var L4_Canvas;
 			crc2.fillStyle = _stamenColor;
 			crc2.fill();
 		}
+		
 	}
-})(L4_Canvas || (L4_Canvas = {}));
+})(L4_Blumenwiese || (L4_Blumenwiese = {}));
 // # sourceMappingURL=04.js.map
 
 // # sourceMappingURL=Aufgabe4.js.map
