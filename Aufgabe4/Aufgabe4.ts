@@ -26,16 +26,6 @@ var L4_Canvas;
         crc2.fillStyle = "yellow";
         crc2.fill();
 
-        // Grass
-        crc2.beginPath();
-        crc2.moveTo(0, 200);
-        crc2.lineTo(400, 200);
-        crc2.lineTo(400, 250);
-        crc2.lineTo(0, 250);
-        crc2.closePath();
-        crc2.fillStyle = "#aaff80";
-        crc2.fill();
-
         // Put flowers at random
         var colors = [];
         for (var i = 0; i < 25; i++) {
@@ -74,8 +64,9 @@ var L4_Canvas;
             crc2.closePath();
             crc2.fill();
         }
-        
+
         //Blumen
+        //Sonneblume
         function drawSunflower(_x, _y, _stalkColor, _stamenColor, _petalColor) {
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;
@@ -83,18 +74,7 @@ var L4_Canvas;
             crc2.lineTo(_x, _y - 20);
             crc2.stroke();
             crc2.closePath();
-            // leafs
-            crc2.beginPath();
-            crc2.strokeStyle = _stalkColor;
-            crc2.moveTo(_x, _y);
-            crc2.lineTo(_x, _y - 7);
-            crc2.lineTo(_x + 5, _y - 7);
-            crc2.lineTo(_x, _y);
-            crc2.stroke();
-            crc2.closePath();
-            crc2.fillStyle = _stalkColor;
-            crc2.fill();
-            // petals
+             // blossom
             crc2.fillStyle = _petalColor;
             crc2.beginPath();
             crc2.arc(_x, _y - 25, 5, 0, 2 * Math.PI);
@@ -108,12 +88,24 @@ var L4_Canvas;
             crc2.beginPath();
             crc2.arc(_x, _y - 15, 5, 0, 2 * Math.PI);
             crc2.fill();
+            // leafs
+            crc2.beginPath();
+            crc2.strokeStyle = _stalkColor;
+            crc2.moveTo(_x, _y);
+            crc2.lineTo(_x, _y - 7);
+            crc2.lineTo(_x + 5, _y - 7);
+            crc2.lineTo(_x, _y);
+            crc2.stroke();
+            crc2.closePath();
+            crc2.fillStyle = _stalkColor;
+            crc2.fill();
             // stamen
             crc2.beginPath();
             crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
             crc2.fillStyle = _stamenColor;
             crc2.fill();
         }
+        //Gänseblümchen
         function drawDaisy(_x, _y, _stalkColor, _stamenColor, _petalColor) {
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;
@@ -121,6 +113,20 @@ var L4_Canvas;
             crc2.lineTo(_x, _y - 20);
             crc2.stroke();
             crc2.closePath();
+             // blossom
+            crc2.fillStyle = _petalColor;
+            crc2.beginPath();
+            crc2.arc(_x, _y - 25, 5, 0, 2 * Math.PI);
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(_x - 5, _y - 20, 5, 0, 2 * Math.PI);
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(_x + 5, _y - 20, 5, 0, 2 * Math.PI);
+            crc2.fill();
+            crc2.beginPath();
+            crc2.arc(_x, _y - 15, 5, 0, 2 * Math.PI);
+            crc2.fill();
             // leafs
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;
@@ -142,24 +148,20 @@ var L4_Canvas;
             crc2.closePath();
             crc2.fillStyle = _stalkColor;
             crc2.fill();
-            // petals
-            crc2.fillStyle = _petalColor;
-            crc2.beginPath();
-            crc2.arc(_x, _y - 25, 5, 0, 2 * Math.PI);
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x - 5, _y - 20, 5, 0, 2 * Math.PI);
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x + 5, _y - 20, 5, 0, 2 * Math.PI);
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x, _y - 15, 5, 0, 2 * Math.PI);
-            crc2.fill();
             // stamen
             crc2.beginPath();
             crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
             crc2.fillStyle = _stamenColor;
+            crc2.fill();
+
+            // Grass
+            crc2.beginPath();
+            crc2.moveTo(0, 200);
+            crc2.lineTo(400, 200);
+            crc2.lineTo(400, 250);
+            crc2.lineTo(0, 250);
+            crc2.closePath();
+            crc2.fillStyle = "#aaff80";
             crc2.fill();
         }
     }
