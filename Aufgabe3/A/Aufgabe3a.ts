@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 color = "black";
             }
         }
-        x = (i % 8) * size; // Modulo anwenden und mit Größe multiplizieren
+        x = (i % 8) * size; // Modulo anwenden und mit GrÃ¶ÃŸe multiplizieren
         y = (reihe - 1) * size;
         placeDiv(color, x, y, size, i);
         if (x == (7 * size)) {

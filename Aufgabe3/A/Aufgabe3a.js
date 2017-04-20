@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var n = 64;
+    var n = 64; // Felder haben die Anzahl 64
     var size = 120;
     var reihe = 1;
-    var color;
     for (var i = 0; i < n; i++) {
-        if (reihe % 2 != 0) {
+        if (reihe % 2 != 0) { // Modulo anwenden -> wenn ungerade
             if (i % 2 == 0) {
                 color = "black";
             }
@@ -13,30 +12,30 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         else {
-            if (i % 2 == 0) {
+            if (i % 2 == 0) { // Modulo anwenden -> wenn gerade
                 color = "white";
             }
             else {
                 color = "black";
             }
         }
-        x = (i % 8) * size;
+        x = (i % 8) * size; // Modulo anwenden und mit Größe multiplizieren
         y = (reihe - 1) * size;
         placeDiv(color, x, y, size, i);
         if (x == (7 * size)) {
             reihe++;
         }
     }
-    writeKoerner();
-    function writeKoerner() {
-        var feld = document.getElementsByClassName("felder");
-        var koerner;
+    writerice();
+    function writerice() {
+        var feld = document.getElementsByClassName("fields");
+        var rice;
         for (var j = 0; j < feld.length; j++) {
-            koerner = Math.pow(2, j);
+            rice = Math.pow(2, j);
             if (j > 23) {
-                koerner = koerner.toExponential(5);
+                rice = rice.toExponential(5);
             }
-            feld[j].textContent = koerner.toString();
+            feld[j].textContent = rice.toString();
         }
     }
     function placeDiv(_color, _x, _y, _size, _counter) {
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         s.position = "absolute";
         s.display = "inline-block";
         div.className += _color;
-        div.className += " felder";
+        div.className += " fields";
         s.width = _size + "px";
         s.height = _size + "px";
         s.left = _x + "px";
@@ -55,26 +54,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var divList = document.getElementsByTagName("div");
     for (var i_1 = 0; i_1 < 9; i_1++) {
         divList[i_1].addEventListener("click", function () {
-            this.classList.toggle("selected");
-            showSummeKoerner();
+            this.classList.toggle("select");
+            showsumrice();
         });
     }
-    function showSummeKoerner() {
-        var selectedDivs = document.getElementsByClassName("selected");
-        var summeKoerner = 0;
-        if (selectedDivs.length == 0) {
-            document.getElementById("tooltip").style.display = "none";
+    function showsumrice() {
+        var selectDivs = document.getElementsByClassName("select");
+        var sumrice = 0;
+        if (selectDivs.length == 0) {
+            document.getElementById("alpha").style.display = "none";
         }
         else {
-            document.getElementById("tooltip").style.display = "inline-block";
+            document.getElementById("alpha").style.display = "inline-block";
         }
-        for (var i_2 = 0; i_2 < selectedDivs.length; i_2++) {
-            summeKoerner += Number(selectedDivs[i_2].textContent);
-            document.getElementById("tooltip").textContent = "Summe der selektierten Reiskörner:" + "\r\n" + "Dezimal: " + summeKoerner.toString() + "\r\n" + "Hexadezimal: " + summeKoerner.toString(16);
+        for (var i_2 = 0; i_2 < selectDivs.length; i_2++) {
+            sumrice += Number(selectDivs[i_2].textContent);
+            document.getElementById("alpha").textContent = "sum of selected rice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
         }
     }
 });
 document.addEventListener("mousemove", function (Event) {
-    document.getElementById("tooltip").style.left = (Event.clientX + 10) + "px";
-    document.getElementById("tooltip").style.top = (Event.clientY + 10) + "px";
+    document.getElementById("alpha").style.left = (Event.clientX + 10) + "px";
+    document.getElementById("alpha").style.top = (Event.clientY + 10) + "px";
 });
