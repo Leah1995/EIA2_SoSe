@@ -22,11 +22,11 @@ var L4_Blumenwiese;
 
 		// Sun
 		crc2.beginPath();
-		crc2.arc(300, 70, 50, 0, 2 * Math.PI);
+		crc2.arc(290, 70, 45, 0, 2 * Math.PI); // x, y, size
 		crc2.fillStyle = "#ffdb4d";
 		crc2.fill();
 		crc2.beginPath();
-		crc2.arc(300, 70, 30, 0, 2 * Math.PI);
+		crc2.arc(290, 70, 30, 0, 2 * Math.PI);
 		crc2.fillStyle = "yellow";
 		crc2.fill();
 		
@@ -120,6 +120,14 @@ var L4_Blumenwiese;
 	
 		  
 		// Grass
+		crc2.beginPath();
+		crc2.moveTo(0, 190);
+		crc2.lineTo(400, 190);
+		crc2.lineTo(400, 250);
+		crc2.lineTo(0, 250);
+		crc2.closePath();
+		crc2.fillStyle = "#226600";
+		crc2.fill();
 		crc2.beginPath();
 		crc2.moveTo(0, 200);
 		crc2.lineTo(400, 200);
