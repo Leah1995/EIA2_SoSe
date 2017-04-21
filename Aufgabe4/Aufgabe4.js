@@ -22,10 +22,103 @@ var L4_Blumenwiese;
 
 		// Sun
 		crc2.beginPath();
+		crc2.arc(300, 70, 50, 0, 2 * Math.PI);
+		crc2.fillStyle = "#ffdb4d";
+		crc2.fill();
+		crc2.beginPath();
 		crc2.arc(300, 70, 30, 0, 2 * Math.PI);
 		crc2.fillStyle = "yellow";
 		crc2.fill();
-
+		
+		// Cloud 1
+//		crc2.beginPath();
+//		crc2.arc(120, 70, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+//		crc2.beginPath();
+//		crc2.arc(150, 80, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+//		crc2.beginPath();
+//		crc2.arc(80, 60, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+//		crc2.beginPath();
+//		crc2.arc(130, 50, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+//		crc2.beginPath();
+//		crc2.arc(80, 75, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+//		crc2.beginPath();
+//		crc2.arc(110, 40, 20, 0, 2 * Math.PI);
+//		crc2.fillStyle = "white";
+//		crc2.fill();
+		
+		// Cloud
+		crc2.beginPath();
+		crc2.arc(320, 130, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(350, 120, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(280, 120, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(330, 130, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(290, 120, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(280, 110, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(310, 110, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(280, 100, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(340, 105, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(240, 90, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(250, 100, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(340, 100, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		crc2.beginPath();
+		crc2.arc(230, 100, 20, 0, 2 * Math.PI);
+		crc2.fillStyle = "white";
+		crc2.fill();
+		
+		//Ellipse
+////	  ctx.beginPath();
+//		  ctx.moveTo(x, ym);
+//		  ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
+//		  ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
+//		  ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+//		  ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
+	
+		  
 		// Grass
 		crc2.beginPath();
 		crc2.moveTo(0, 200);
@@ -35,12 +128,23 @@ var L4_Blumenwiese;
 		crc2.closePath();
 		crc2.fillStyle = "#aaff80";
 		crc2.fill();
+		
+		// Path
+		crc2.beginPath();
+		crc2.moveTo(-50, 230);
+		crc2.lineTo(400, 200);
+		crc2.lineTo(40, 280);
+		crc2.lineTo(230, 350);
+		crc2.closePath();
+		crc2.fillStyle = "#ffe699";
+		crc2.fill();
+		
 
 		// Put flowers at random
 		var colors = [];
-		for (var i = 0; i < 25; i++) {
+		for (var i = 0; i < 70; i++) {
 			var randomX = (Math.random() * (400 - 1)) + 1;
-			var randomY = (Math.random() * (220 - 200)) + 200;
+			var randomY = (Math.random() * (250 - 200)) + 200;
 			console.log("X is " + randomX, "Y is " + randomY, randomSunflower);
 			var randomSunflower = Math.floor((Math.random() * 2)) + 1;
 			if (randomSunflower == 1) {
@@ -57,20 +161,10 @@ var L4_Blumenwiese;
 			crc2.strokeStyle = _strokeColor;
 			crc2.moveTo(_x - 400, _y + 50);
 			crc2.lineTo(_x, _y - 80);
-			crc2.lineTo(_x + 20, _y - 50);
-			crc2.lineTo(_x + 40, _y - 60);
+			crc2.lineTo(_x + 70, _y - 50);
+			crc2.lineTo(_x + 80, _y - 60);
 			crc2.lineTo(_x + 150, _y + 40);
-			crc2.closePath();
-			crc2.fill();
-			// Bergspitze
-			crc2.beginPath();
-			crc2.fillStyle = "d9d9d9";
-			crc2.lineTo(_x + 30, _y - 45);
-			crc2.lineTo(_x + 50, _y - 20);
-			crc2.lineTo(_x + 40, _y - 60);
-			crc2.lineTo(_x + 10, _y - 50);
-			crc2.lineTo(_x, _y - 80);
-			crc2.lineTo(_x - 15, _y - 40);
+			crc2.lineTo(_x + 120, _y + 40);
 			crc2.closePath();
 			crc2.fill();
 		}
@@ -162,9 +256,11 @@ var L4_Blumenwiese;
 			crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
 			crc2.fillStyle = _stamenColor;
 			crc2.fill();
+			
 		}
 		
 	}
+	
 })(L4_Blumenwiese || (L4_Blumenwiese = {}));
 // # sourceMappingURL=04.js.map
 
