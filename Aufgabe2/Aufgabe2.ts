@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let field = 0; // vom "ersten" Feld  an
-    let line = 0; // von der "ersten" Linie an
-    let rice = 1; // Reiskörner von hier an 1
+document.addEventListener("DOMContentLoaded", function (): void {
+    let field: number = 0; // vom "ersten" Feld  an
+    let line: number = 0; // von der "ersten" Linie an
+    let rice: number = 1; // Reiskörner von hier an 1
     for (field = 0; field < 64; field++) { // Felder zwischen dem "ersten" und dem "letzten"
-        let div = document.createElement("div");
+        let div: HTMLDivElement = document.createElement("div");
         div.innerText = "" + rice;
         rice = rice * 2; // Anzahl verdoppeln
         document.body.appendChild(div);

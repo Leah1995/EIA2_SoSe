@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     var field = 0; // vom "ersten" Feld  an
     var line = 0; // von der "ersten" Linie an
     var rice = 1; // Reisk�rner von hier an 1
