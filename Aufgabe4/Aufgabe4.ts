@@ -162,7 +162,7 @@ namespace L4_Blumenwiese {
         }
 
         // Berg
-        function drawBerg(_x, _y, _strokeColor, _fillColor) {
+        function drawBerg(_x, _y, _strokeColor, _fillColor): void {
             crc2.beginPath();
             crc2.fillStyle = _fillColor;
             crc2.strokeStyle = _strokeColor;
