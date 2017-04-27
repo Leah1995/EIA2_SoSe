@@ -28,33 +28,32 @@ namespace L4_Blumenwiese {
         crc2.arc(290, 70, 30, 0, 2 * Math.PI);
         crc2.fillStyle = "yellow";
         crc2.fill();
-        
+
         // Cloud 1
-//      crc2.beginPath();
-//      crc2.arc(120, 70, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-//      crc2.beginPath();
-//      crc2.arc(150, 80, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-//      crc2.beginPath();
-//      crc2.arc(80, 60, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-//      crc2.beginPath();
-//      crc2.arc(130, 50, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-//      crc2.beginPath();
-//      crc2.arc(80, 75, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-//      crc2.beginPath();
-//      crc2.arc(110, 40, 20, 0, 2 * Math.PI);
-//      crc2.fillStyle = "white";
-//      crc2.fill();
-        
+        //      crc2.beginPath();
+        //      crc2.arc(120, 70, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        //      crc2.fill();
+        //      crc2.beginPath();
+        //      crc2.arc(150, 80, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        //      crc2.fill();
+        //      crc2.beginPath();
+        //      crc2.arc(80, 60, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        //      crc2.fill();
+        //      crc2.beginPath();
+        //      crc2.arc(130, 50, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        //      crc2.fill();
+        //      crc2.beginPath();
+        //      crc2.arc(80, 75, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        // crc2.fill();
+        //      crc2.beginPath();
+        //      crc2.arc(110, 40, 20, 0, 2 * Math.PI);
+        //      crc2.fillStyle = "white";
+        //      crc2.fill(); 
         // Cloud
         crc2.beginPath();
         crc2.arc(320, 130, 20, 0, 2 * Math.PI);
@@ -108,16 +107,16 @@ namespace L4_Blumenwiese {
         crc2.arc(230, 100, 20, 0, 2 * Math.PI);
         crc2.fillStyle = "white";
         crc2.fill();
-        
+
         //Ellipse
-////      ctx.beginPath();
-//        ctx.moveTo(x, ym);
-//        ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
-//        ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
-//        ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
-//        ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
-    
-          
+        ////      ctx.beginPath();
+        //        ctx.moveTo(x, ym);
+        //        ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
+        //        ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
+        //        ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+        //        ctx.er - ox, ye, x, ym + oy, x, ym);
+
+
         // Grass
         crc2.beginPath();
         crc2.moveTo(0, 190);
@@ -135,7 +134,7 @@ namespace L4_Blumenwiese {
         crc2.closePath();
         crc2.fillStyle = "#aaff80";
         crc2.fill();
-        
+
         // Path
         crc2.beginPath();
         crc2.moveTo(-50, 230);
@@ -145,15 +144,15 @@ namespace L4_Blumenwiese {
         crc2.closePath();
         crc2.fillStyle = "#ffe699";
         crc2.fill();
-        
+
 
         // Put flowers at random
-        let colors: string = [];
+        let colors: string[] = [];
         for (let i: number = 0; i < 70; i++) {
             let randomX: number = (Math.random() * (400 - 1)) + 1;
-            var randomY: number = (Math.random() * (250 - 200)) + 200;
+            let randomY: number = (Math.random() * (250 - 200)) + 200;
             console.log("X is " + randomX, "Y is " + randomY, randomSunflower);
-            var randomSunflower = Math.floor((Math.random() * 2)) + 1;
+            let randomSunflower: number = Math.floor((Math.random() * 2)) + 1;
             if (randomSunflower == 1) {
                 drawSunflower(randomX, randomY, "#44d580", "#332900", "#ffd11a");
             } else {
@@ -162,7 +161,7 @@ namespace L4_Blumenwiese {
         }
 
         // Berg
-        function drawBerg(_x, _y, _strokeColor, _fillColor): void {
+        function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
             crc2.beginPath();
             crc2.fillStyle = _fillColor;
             crc2.strokeStyle = _strokeColor;
@@ -175,9 +174,9 @@ namespace L4_Blumenwiese {
             crc2.closePath();
             crc2.fill();
         }
-        
+
         //Blumen
-        function drawSunflower(_x, _y, _stalkColor, _stamenColor, _petalColor) {
+        function drawSunflower(_x: number, _y: number, _stalkColor: string, _stamenColor: string, _petalColor: string): void {
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;
             crc2.moveTo(_x, _y);
@@ -214,9 +213,9 @@ namespace L4_Blumenwiese {
             crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
             crc2.fillStyle = _stamenColor;
             crc2.fill();
-            
+
         }
-        function drawDaisy(_x, _y, _stalkColor, _stamenColor, _petalColor) {
+        function drawDaisy(_x: number, _y: number, _stalkColor: string, _stamenColor: string, _petalColor: string): void {
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;
             crc2.moveTo(_x, _y);
@@ -263,10 +262,10 @@ namespace L4_Blumenwiese {
             crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
             crc2.fillStyle = _stamenColor;
             crc2.fill();
-            
+
         }
-        
+
     }
-    
+
 }
 
