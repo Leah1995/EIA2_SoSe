@@ -1,9 +1,8 @@
-var L4_Blumenwiese;
-(function(L4_Blumenwiese) {
+namespace L4_Blumenwiese {
     window.addEventListener("load", init);
-    let crc2;
-    function init(_event) {
-        var canvas;
+    let crc2: CanvasRenderingContext2D;
+    function init(_event: Event): void {
+        let canvas: HTMLCanvasElement;
         canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
         crc2 = canvas.getContext("2d");
@@ -269,5 +268,5 @@ var L4_Blumenwiese;
         
     }
     
-})(L4_Blumenwiese || (L4_Blumenwiese = {}));
+}
 

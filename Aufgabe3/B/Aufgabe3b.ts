@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var cards = ["Diamonds 7", "Diamonds 8", "Diamonds 9", "Diamonds 10", "Diamonds Jack", "Diamonds Queen", "Diamonds King", "Diamonds Ace", "Cross 7", "Cross 8", "Cross 9", "Cross 10", "Cross Jack", "Cross Queen", "Cross King", "Cross Ace", "Heart 7", "Heart 8", "Heart 9", "Heart 10", "Heart Jack", "Heart Queen", "Heart King", "Heart Ace", "Spade 7", "Spade 8", "Spade 9", "Spade 10", "Spade Jack", "Spade Queen", "Spade King", "Spade Ace"];
-    var HandCards = [];
+    var HandCards: string[] = [];
     var filedCards = [];
     document.getElementById("Draw").addEventListener("click", function () {
         if (HandCards.length < 5 && cards.length > 0) {
