@@ -1,10 +1,10 @@
 var L3a_chess;
 (function (L3a_chess) {
     document.addEventListener("DOMContentLoaded", function () {
-        var n = 64; // Felder haben die Anzahl 64 
-        var size = 120;
-        var reihe = 1;
-        var color;
+        let n: number = 64; // Felder haben die Anzahl 64 
+        let size: number = 120;
+        let reihe: number = 1;
+        var color: string;
         for (var i = 0; i < n; i++) {
             if (reihe % 2 != 0) {
                 if (i % 2 == 0) {
@@ -73,9 +73,9 @@ var L3a_chess;
         else {
             document.getElementById("alpha").style.display = "inline-block";
         }
-        for (var i = 0; i < selectDivs.length; i++) {
-            sumrice += Number(selectDivs[i].textContent);
-            document.getElementById("alpha").textContent = "sum of selected rice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
+        for (var i2 = 0; i2 < selectDivs.length; i2++) {
+            sumrice += Number(selectDivs[i2].textContent);
+            document.getElementById("alpha").textContent = "sumofselectedrice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
         }
     }
     document.addEventListener("mousemove", function (_event) {

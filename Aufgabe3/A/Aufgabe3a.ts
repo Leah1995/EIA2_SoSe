@@ -79,9 +79,9 @@ namespace L3a_chess {
         else {
             document.getElementById("alpha").style.display = "inline-block";
         }
-        for (let i: number = 0; i < selectDivs.length; i++) {
-            sumrice += Number(selectDivs[i].textContent);
-            document.getElementById("alpha").textContent = "sum of selected rice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
+        for (let i2: number = 0; i2 < selectDivs.length; i2++) {
+            sumrice += Number(selectDivs[i2].textContent);
+            document.getElementById("alpha").textContent = "sumofselectedrice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
         }
     }
 
