@@ -62,7 +62,7 @@ namespace L3a_chess {
             let divList: NodeListOf<Element> = document.getElementsByTagName("div");
             for (let i1: number = 0; i1 < 9; i1++) {
                 divList[i1].addEventListener("click", function(): void {
-                    this.classList.toggle("selected");
+                    this.classList.toggle("select");
                     showsumrice();
                 });
             }

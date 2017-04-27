@@ -58,7 +58,7 @@ var L3a_chess;
             var divList = document.getElementsByTagName("div");
             for (var i1 = 0; i1 < 9; i1++) {
                 divList[i1].addEventListener("click", function () {
-                    this.classList.toggle("selected");
+                    this.classList.toggle("select");
                     showsumrice();
                 });
             }
