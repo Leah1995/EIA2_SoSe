@@ -1,8 +1,8 @@
 
 namespace L3a_chess {
-    document.addEventListener("DOMContentLoaded", function(): void { // keine anonymen Funktionen nutzen!
+    document.addEventListener("DOMContentLoaded", function(): void {
         let n: number = 64; // Felder haben die Anzahl 64 
-        let size: number = 120; // hier fehlen überall die Typdeklarationen!
+        let size: number = 120; 
         let reihe: number = 1;
         let color: string;
 
@@ -31,7 +31,7 @@ namespace L3a_chess {
             }
         }
         writerice();
-        var divList: NodeListOf<Element> = document.getElementsByTagName("div");
+        let divList: NodeListOf<Element> = document.getElementsByTagName("div");
         for (let i: number = 1; i < 9; i++) {
             divList[i].addEventListener("click", function(): void {
                 this.classList.toggle("select");
@@ -61,7 +61,7 @@ namespace L3a_chess {
         for (let j: number = 0; j < feld.length; j++) {
             let divList: NodeListOf<Element> = document.getElementsByTagName("div");
             for (let i1: number = 0; i1 < 9; i1++) {
-                divList[i1].addEventListener("click", function(): void {  // keine anonymen und verschachtelten Funktionen nutzen!
+                divList[i1].addEventListener("click", function(): void {
                     this.classList.toggle("select");
                     showsumrice();
                 });

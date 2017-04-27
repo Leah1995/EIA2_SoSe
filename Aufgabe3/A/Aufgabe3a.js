@@ -2,7 +2,7 @@ var L3a_chess;
 (function (L3a_chess) {
     document.addEventListener("DOMContentLoaded", function () {
         var n = 64; // Felder haben die Anzahl 64 
-        var size = 120; // hier fehlen überall die Typdeklarationen!
+        var size = 120;
         var reihe = 1;
         var color;
         for (var i = 0; i < n; i++) {

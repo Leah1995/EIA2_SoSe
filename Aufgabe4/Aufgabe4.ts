@@ -148,10 +148,10 @@ namespace L4_Blumenwiese {
         
 
         // Put flowers at random
-        var colors = [];
-        for (var i = 0; i < 70; i++) {
-            var randomX = (Math.random() * (400 - 1)) + 1;
-            var randomY = (Math.random() * (250 - 200)) + 200;
+        let colors: string = [];
+        for (let i: number = 0; i < 70; i++) {
+            let randomX: number = (Math.random() * (400 - 1)) + 1;
+            var randomY: number = (Math.random() * (250 - 200)) + 200;
             console.log("X is " + randomX, "Y is " + randomY, randomSunflower);
             var randomSunflower = Math.floor((Math.random() * 2)) + 1;
             if (randomSunflower == 1) {
