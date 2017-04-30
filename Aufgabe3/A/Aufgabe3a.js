@@ -1,10 +1,10 @@
 var L3a_chess;
 (function (L3a_chess) {
     document.addEventListener("DOMContentLoaded", function () {
-        let n: number = 64; // Felder haben die Anzahl 64 
-        let size: number = 120;
-        let reihe: number = 1;
-        var color: string;
+        var n = 64; // Felder haben die Anzahl 64 
+        var size = 120;
+        var reihe = 1;
+        var color;
         for (var i = 0; i < n; i++) {
             if (reihe % 2 != 0) {
                 if (i % 2 == 0) {
