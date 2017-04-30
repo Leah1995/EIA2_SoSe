@@ -34,7 +34,7 @@ var L4_Canvas;
         console.log("Animate called");
         crc2.putImageData(imgData, 0, 0);
         for (let i = 0; i < beeNumber; i++) {
-            x[i] += Math.random() * 4.5 - 2;
+            x[i] += Math.random() * 4 - 2;
             y[i] += Math.random() * 4 - 2;           
             if (x[i] > crc2.canvas.width) {
                 x[i] = 0;
@@ -62,7 +62,7 @@ var L4_Canvas;
         crc2.closePath();
         crc2.fillStyle = "orange";
         crc2.fill();
-        //Körpermitte
+        // Body
         crc2.beginPath();
         crc2.moveTo(_x - 2, _y - 3);
         crc2.lineTo(_x + 3, _y - 3);
@@ -72,10 +72,10 @@ var L4_Canvas;
         crc2.fillStyle = "#000000";
         crc2.fill();
     }
-    // neue Biene
+    // Klick -> neue Biene
     function addBee() {
-        x.push(65);
-        y.push(183);
+        x.push(70);
+        y.push(180);
         beeNumber++;
     }
     // Sky  
@@ -267,7 +267,6 @@ var L4_Canvas;
     }
     
     function drawDaisy(_x, _y, _stalkColor, _stamenColor, _petalColor) {
-     
         crc2.beginPath();
         crc2.strokeStyle = _stalkColor;
         crc2.moveTo(_x, _y);
