@@ -7,7 +7,7 @@ var StudiVZ;
         switch (action) {
             case "n":
             case "N":
-                var input = prompt("Eingabe (bitte mit Komma trennen) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (0 für weiblich oder 1 für männlich) und Kommentar");
+                var input = prompt("Eingabe (bitte mit Komma trennen) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (0 f�r weiblich oder 1 f�r m�nnlich) und Kommentar");
                 alert(saveData(input));
                 break;
             case "a":
@@ -33,7 +33,7 @@ var StudiVZ;
         students.push(s);
         var gender;
         if (parseInt(dataArr[4]) == 1) {
-            gender = "männlich";
+            gender = "m�nnlich";
         }
         else {
             gender = "weiblich";
@@ -44,7 +44,7 @@ var StudiVZ;
     function queryData(_matrikelnr) {
         for (var i = 0; i < students.length; i++) {
             if (students[i].matrikelnr == _matrikelnr) {
-                var gender = students[i].geschlecht ? "männlich" : "weiblich";
+                var gender = students[i].geschlecht ? "m�nnlich" : "weiblich";
                 return "Abgespeicherte Daten zu folgender Matrikelnummer: " + students[i].matrikelnr + "\n\nName: " + students[i].name + "," + students[i].vorName + "\nAlter: " + students[i].age + "\nGeschlecht: " + gender + "\nKommentar: " + students[i].comment;
             }
             else {

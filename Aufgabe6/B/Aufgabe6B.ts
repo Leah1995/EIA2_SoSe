@@ -34,7 +34,7 @@ namespace StudiVZ {
     function saveData(_input: string): string {
         let dataArr: string[] = _input.split(",");
         let s: StudentData = {
-            matrikelnr: parseInt(dataArr[0])
+            matrikelnr: parseInt(dataArr[0]),
             name: dataArr[1],
             vorName: dataArr[2],
             age: parseInt(dataArr[3]),
@@ -42,13 +42,13 @@ namespace StudiVZ {
             comment: dataArr[5]
         };
 
-        students.push(s);  //pushe die Daten aus s in die students-kartei damit ein neuer "Student" entsteht
+        students.push(s); 
 
         let gender: string;
-        if (parseInt(dataArr[4]) == 1) {   //Wenn die geschlecht-info in der 4. Schublade == 1 eingetippt wurde, dann ist er männlich
+        if (parseInt(dataArr[4]) == 1) {   
             gender = "männlich";
         }
-        else {                      //Wurde 0 eingegeben ist er weiblich
+        else {                     
             gender = "weiblich";
         }
 
