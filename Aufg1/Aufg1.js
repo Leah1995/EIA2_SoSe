@@ -17,7 +17,7 @@ var L4_Skipiste;
 		crc2.lineTo(800, 0);
 		crc2.lineTo(800, 600);
 		crc2.fillStyle = "#ccf5ff";
-		crc2.fill();		
+		crc2.fill();
 		drawLandschaft(0, 800, "white")
 		drawBerg3(450, 270, "#c2d6d6", "#f2f2f2");
 		drawBerg(250, 300, "#c2d6d6", "#e6e6e6");
