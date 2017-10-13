@@ -49,11 +49,11 @@ namespace L4_Blumenwiese {
         //      crc2.beginPath();
         //      crc2.arc(80, 75, 20, 0, 2 * Math.PI);
         //      crc2.fillStyle = "white";
-        // crc2.fill();
+        //      crc2.fill();
         //      crc2.beginPath();
         //      crc2.arc(110, 40, 20, 0, 2 * Math.PI);
         //      crc2.fillStyle = "white";
-        //      crc2.fill(); 
+        //      crc2.fill();
         // Cloud
         crc2.beginPath();
         crc2.arc(320, 130, 20, 0, 2 * Math.PI);

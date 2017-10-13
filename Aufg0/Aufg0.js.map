@@ -1,1 +1,1 @@
-{"version":3,"file":"Aufg0.js","sourceRoot":"","sources":["Aufg0.ts"],"names":[],"mappings":""}
+{"version":3,"file":"Aufg0.js","sourceRoot":"","sources":["Aufg0.ts"],"names":[],"mappings":"AAAA,QAAQ,CAAC,gBAAgB,CAAC,kBAAkB,EAAE;IAC1C,IAAI,QAAQ,GAAG,SAAS,CAAC;IACzB,IAAI,OAAO,GAAG,MAAM,CAAC,eAAe,CAAC,CAAC;IACtC,QAAQ,CAAC,cAAc,CAAC,OAAO,CAAC,CAAC,SAAS,GAAG,QAAQ,GAAG,GAAG,GAAG,OAAO,GAAG,KAAK,CAAC;AAClF,CAAC,CAAC,CAAC;AACH,oCAAoC"}
