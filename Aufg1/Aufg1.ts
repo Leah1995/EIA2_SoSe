@@ -20,10 +20,10 @@ namespace L4_Schneelandschaft {
         drawBerg(300, 380, "#c2d6d6", "#f2f2f2");
         drawBerg(700, 350, "#c2d6d6", "#e6e6e6");
         drawBerg(200, 360, "#c2d6d6", "#d9d9d9");
-        drawBaum1(800, 200, "#80ffaa");
-        drawBaum2(800, 480, "#1a6600");
+        drawBaum1(800, 200);
+        drawBaum2(800, 200);
         drawKrone(400, 400);
-        drawSkilift;
+//        drawSkilift;
 
         // Sonne
         crc2.beginPath();
@@ -123,7 +123,7 @@ namespace L4_Schneelandschaft {
 
         // Bäume zufällig hinstellen
         var colors: string[] = [];
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < 20; i++) {
             var randomX = (Math.random() * (800 - 1)) + 1;
             var randomY = (Math.random() * (550 - 400)) + 400;
             console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
@@ -156,21 +156,21 @@ namespace L4_Schneelandschaft {
             crc2.beginPath();
             crc2.strokeStyle = "#cc9966";
             crc2.lineWidth = 10;
-            crc2.moveTo(_x + 220, _y + 35);
-            crc2.lineTo(_x + 220, _y - 35);
+            crc2.moveTo(_x + 20, _y + 35);
+            crc2.lineTo(_x + 20, _y - 35);
             crc2.stroke();
             // Baumkrone
 
         }
 
         // Baum 2
-        function drawBaum2(_x: number, _y: number, _fillColor: string, _strokeColor: string) {
+        function drawBaum2(_x: number, _y: number) {
             // Stamm
             crc2.beginPath();
             crc2.strokeStyle = "#994d00";
             crc2.lineWidth = 7;
-            crc2.moveTo(_x + 400, _y + 25);
-            crc2.lineTo(_x + 400, _y - 25);
+            crc2.moveTo(_x + 50, _y + 25);
+            crc2.lineTo(_x + 50, _y - 25);
             crc2.stroke();
         }
 
@@ -178,8 +178,8 @@ namespace L4_Schneelandschaft {
         function drawKrone(_x: number, _y: number) {
             crc2.beginPath();
             crc2.moveTo(_x + 75, _y + 50);
-            crc2.lineTo(_x + 200, _y + 75);
-            crc2.lineTo(_x + 100, _y + 25);
+            crc2.lineTo(_x + 50, _y + 75);
+            crc2.lineTo(_x + 50, _y + 25);
             crc2.fill();
         }
 
@@ -191,9 +191,17 @@ namespace L4_Schneelandschaft {
             crc2.moveTo(_x - 60, _y + 400);
             crc2.lineTo(_x + 50, _y - 400);
             crc2.stroke();
+
+            // Skisitz
+            function drawSkisitz(_x: number, _y: number) {
+                crc2.beginPath();
+                crc2.strokeStyle = "black";
+                crc2.lineWidth = 20;
+                crc2.moveTo(_x - 570, _y + 300);
+                crc2.lineTo(_x + 150, _y - 200);
+                crc2.stroke();
+            }
         }
-
-
     }
 
 }
