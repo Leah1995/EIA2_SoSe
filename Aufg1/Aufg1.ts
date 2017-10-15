@@ -150,14 +150,14 @@ namespace L4_Schneelandschaft {
         }
 
         // Baum 1
-        function drawBaum1(_x: number, _y: number, trunkColor: string, topColor: string) {
+        function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string) {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(50, 515);
             crc2.lineTo(75, 565);
             crc2.lineTo(25, 565);
             crc2.closePath();
-            crc2.fillStyle = "trunkColor";
+            crc2.fillStyle = _trunkColor;
             crc2.fillRect(124, 467, 12, 23);
             // Baumkrone
             crc2.beginPath();
@@ -165,26 +165,26 @@ namespace L4_Schneelandschaft {
             crc2.lineTo(155, 455);
             crc2.lineTo(105, 455);
             crc2.closePath();
-            crc2.fillStyle = "topColor";
+            crc2.fillStyle = _topColor;
             crc2.fill();
             crc2.beginPath();
             crc2.moveTo(130, 425);
             crc2.lineTo(155, 475);
             crc2.lineTo(105, 475);
             crc2.closePath();
-            crc2.fillStyle = "topColor";
+            crc2.fillStyle = _topColor;
             crc2.fill();
         }
 
         // Baum 2
-        function drawBaum2(_x: number, _y: number, trunkcolor: string, topColor: string) {
+        function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string) {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(60, 85);
             crc2.lineTo(85, 135);
             crc2.lineTo(35, 135);
             crc2.closePath();
-            crc2.fillStyle = "trunkColor";
+            crc2.fillStyle = _trunkColor;
             crc2.fillRect(44, 557, 12, 23);
             // Baumkrone
             crc2.beginPath();
@@ -192,7 +192,7 @@ namespace L4_Schneelandschaft {
             crc2.lineTo(75, 565);
             crc2.lineTo(25, 565);
             crc2.closePath();
-            crc2.fillStyle = "topColor";
+            crc2.fillStyle = _topColor;
             crc2.fill();
         }
 
@@ -205,6 +205,7 @@ namespace L4_Schneelandschaft {
             crc2.lineTo(_x + 50, _y - 400);
             crc2.stroke();
         }
+        
         // Skisitz
         function drawSkisitz(_x: number, _y: number) {
             crc2.beginPath();
