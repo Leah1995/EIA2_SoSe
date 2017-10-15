@@ -20,10 +20,9 @@ namespace L4_Schneelandschaft {
         drawBerg(300, 380, "#c2d6d6", "#f2f2f2");
         drawBerg(700, 350, "#c2d6d6", "#e6e6e6");
         drawBerg(200, 360, "#c2d6d6", "#d9d9d9");
-        drawBaum1(800, 200);
-        drawBaum2(800, 200);
-        drawKrone(400, 400);
-//        drawSkilift;
+        drawBaum1(800, 200, "#cc9966", "#00514c");
+        drawBaum2(800, 200, "#4c2e0a", "#44d271");
+        //        drawSkilift;
 
         // Sonne
         crc2.beginPath();
@@ -151,35 +150,49 @@ namespace L4_Schneelandschaft {
         }
 
         // Baum 1
-        function drawBaum1(_x: number, _y: number) {
+        function drawBaum1(_x: number, _y: number, trunkColor: string, topColor: string) {
             // Stamm
             crc2.beginPath();
-            crc2.strokeStyle = "#cc9966";
-            crc2.lineWidth = 10;
-            crc2.moveTo(_x + 20, _y + 35);
-            crc2.lineTo(_x + 20, _y - 35);
-            crc2.stroke();
+            crc2.moveTo(50, 515);
+            crc2.lineTo(75, 565);
+            crc2.lineTo(25, 565);
+            crc2.closePath();
+            crc2.fillStyle = "trunkColor";
+            crc2.fillRect(124, 467, 12, 23);
             // Baumkrone
-
+            crc2.beginPath();
+            crc2.moveTo(130, 415);
+            crc2.lineTo(155, 455);
+            crc2.lineTo(105, 455);
+            crc2.closePath();
+            crc2.fillStyle = "topColor";
+            crc2.fill();
+            crc2.beginPath();
+            crc2.moveTo(130, 425);
+            crc2.lineTo(155, 475);
+            crc2.lineTo(105, 475);
+            crc2.closePath();
+            crc2.fillStyle = "topColor";
+            crc2.fill();
         }
 
         // Baum 2
-        function drawBaum2(_x: number, _y: number) {
+        function drawBaum2(_x: number, _y: number, trunkcolor: string, topColor: string) {
             // Stamm
             crc2.beginPath();
-            crc2.strokeStyle = "#994d00";
-            crc2.lineWidth = 7;
-            crc2.moveTo(_x + 50, _y + 25);
-            crc2.lineTo(_x + 50, _y - 25);
-            crc2.stroke();
-        }
-
-        // Baumkrone
-        function drawKrone(_x: number, _y: number) {
+            crc2.moveTo(60, 85);
+            crc2.lineTo(85, 135);
+            crc2.lineTo(35, 135);
+            crc2.closePath();
+            crc2.fillStyle = "trunkColor";
+            crc2.fillRect(44, 557, 12, 23);
+            // Baumkrone
             crc2.beginPath();
-            crc2.moveTo(_x + 75, _y + 50);
-            crc2.lineTo(_x + 50, _y + 75);
-            crc2.lineTo(_x + 50, _y + 25);
+            crc2.moveTo(50, 515);
+            crc2.lineTo(75, 565);
+            crc2.lineTo(25, 565);
+            crc2.closePath();
+            crc2.fillStyle = "topColor";
             crc2.fill();
         }
 
@@ -191,17 +204,17 @@ namespace L4_Schneelandschaft {
             crc2.moveTo(_x - 60, _y + 400);
             crc2.lineTo(_x + 50, _y - 400);
             crc2.stroke();
-
-            // Skisitz
-            function drawSkisitz(_x: number, _y: number) {
-                crc2.beginPath();
-                crc2.strokeStyle = "black";
-                crc2.lineWidth = 20;
-                crc2.moveTo(_x - 570, _y + 300);
-                crc2.lineTo(_x + 150, _y - 200);
-                crc2.stroke();
-            }
         }
+        // Skisitz
+        function drawSkisitz(_x: number, _y: number) {
+            crc2.beginPath();
+            crc2.strokeStyle = "black";
+            crc2.lineWidth = 20;
+            crc2.moveTo(_x - 570, _y + 300);
+            crc2.lineTo(_x + 150, _y - 200);
+            crc2.stroke();
+        }
+
     }
 
 }

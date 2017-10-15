@@ -1,9 +1,9 @@
 var L4_Schneelandschaft;
 (function (L4_Schneelandschaft) {
     window.addEventListener("load", init);
-    var crc2;
+    let crc2;
     function init(_event) {
-        var canvas;
+        let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
         crc2 = canvas.getContext("2d");
@@ -21,7 +21,7 @@ var L4_Schneelandschaft;
         drawBerg(200, 360, "#c2d6d6", "#d9d9d9");
         drawBaum1(800, 200);
         drawBaum2(800, 200);
-        drawKrone(400, 400);
+        //        drawKrone(400, 400);
         //        drawSkilift;
         // Sonne
         crc2.beginPath();
@@ -117,7 +117,7 @@ var L4_Schneelandschaft;
         crc2.fillRect(0, 380, 800, 20);
         // B�ume zuf�llig hinstellen
         var colors = [];
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 20; i++) {
             var randomX = (Math.random() * (800 - 1)) + 1;
             var randomY = (Math.random() * (550 - 400)) + 400;
             console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
@@ -147,29 +147,45 @@ var L4_Schneelandschaft;
         function drawBaum1(_x, _y) {
             // Stamm
             crc2.beginPath();
-            crc2.strokeStyle = "#cc9966";
-            crc2.lineWidth = 10;
-            crc2.moveTo(_x + 20, _y + 35);
-            crc2.lineTo(_x + 20, _y - 35);
-            crc2.stroke();
+            crc2.moveTo(50, 515);
+            crc2.lineTo(75, 565);
+            crc2.lineTo(25, 565);
+            crc2.closePath();
+            crc2.fillStyle = "#8b5a2b";
+            crc2.fillRect(124, 467, 12, 23);
             // Baumkrone
+            crc2.beginPath();
+            crc2.moveTo(130, 415);
+            crc2.lineTo(155, 455);
+            crc2.lineTo(105, 455);
+            crc2.closePath();
+            crc2.fillStyle = "#5a924f";
+            crc2.fill();
+            crc2.beginPath();
+            crc2.moveTo(130, 425);
+            crc2.lineTo(155, 475);
+            crc2.lineTo(105, 475);
+            crc2.closePath();
+            crc2.fillStyle = "#5a924f";
+            crc2.fill();
         }
         // Baum 2
         function drawBaum2(_x, _y) {
             // Stamm
             crc2.beginPath();
-            crc2.strokeStyle = "#994d00";
-            crc2.lineWidth = 7;
-            crc2.moveTo(_x + 50, _y + 25);
-            crc2.lineTo(_x + 50, _y - 25);
-            crc2.stroke();
-        }
-        // Baumkrone
-        function drawKrone(_x, _y) {
+            crc2.moveTo(60, 85);
+            crc2.lineTo(85, 135);
+            crc2.lineTo(35, 135);
+            crc2.closePath();
+            crc2.fillStyle = "#cc9966";
+            crc2.fillRect(44, 557, 12, 23);
+            // Baumkrone
             crc2.beginPath();
-            crc2.moveTo(_x + 75, _y + 50);
-            crc2.lineTo(_x + 50, _y + 75);
-            crc2.lineTo(_x + 50, _y + 25);
+            crc2.moveTo(50, 515);
+            crc2.lineTo(75, 565);
+            crc2.lineTo(25, 565);
+            crc2.closePath();
+            crc2.fillStyle = "#5a924f";
             crc2.fill();
         }
         //Skilift
@@ -180,15 +196,15 @@ var L4_Schneelandschaft;
             crc2.moveTo(_x - 60, _y + 400);
             crc2.lineTo(_x + 50, _y - 400);
             crc2.stroke();
-            // Skisitz
-            function drawSkisitz(_x, _y) {
-                crc2.beginPath();
-                crc2.strokeStyle = "black";
-                crc2.lineWidth = 20;
-                crc2.moveTo(_x - 570, _y + 300);
-                crc2.lineTo(_x + 150, _y - 200);
-                crc2.stroke();
-            }
+        }
+        // Skisitz
+        function drawSkisitz(_x, _y) {
+            crc2.beginPath();
+            crc2.strokeStyle = "black";
+            crc2.lineWidth = 20;
+            crc2.moveTo(_x - 570, _y + 300);
+            crc2.lineTo(_x + 150, _y - 200);
+            crc2.stroke();
         }
     }
 })(L4_Schneelandschaft || (L4_Schneelandschaft = {}));
