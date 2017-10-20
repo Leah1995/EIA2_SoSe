@@ -1,11 +1,11 @@
 var L3a_chess;
 (function (L3a_chess) {
     document.addEventListener("DOMContentLoaded", function () {
-        var n = 64; // Felder haben die Anzahl 64 
-        var size = 120;
-        var reihe = 1;
-        var color;
-        for (var i = 0; i < n; i++) {
+        let n = 64; // Felder haben die Anzahl 64 
+        let size = 120;
+        let reihe = 1;
+        let color;
+        for (let i = 0; i < n; i++) {
             if (reihe % 2 != 0) {
                 if (i % 2 == 0) {
                     color = "black";
@@ -30,8 +30,8 @@ var L3a_chess;
             }
         }
         writerice();
-        var divList = document.getElementsByTagName("div");
-        for (var i = 1; i < 9; i++) {
+        let divList = document.getElementsByTagName("div");
+        for (let i = 1; i < 9; i++) {
             divList[i].addEventListener("click", function () {
                 this.classList.toggle("select");
                 showsumrice();
@@ -39,9 +39,9 @@ var L3a_chess;
         }
     });
     function placeDiv(_color, _x, _y, _size, _counter) {
-        var div = document.createElement("div");
+        let div = document.createElement("div");
         document.body.appendChild(div);
-        var s = div.style;
+        let s = div.style;
         s.position = "absolute";
         s.display = "inline-block";
         div.className += _color;
@@ -52,11 +52,11 @@ var L3a_chess;
         s.top = _y + "px";
     }
     function writerice() {
-        var feld = document.getElementsByClassName("fields");
-        var rice;
-        for (var j = 0; j < feld.length; j++) {
-            var divList = document.getElementsByTagName("div");
-            for (var i1 = 0; i1 < 9; i1++) {
+        let feld = document.getElementsByClassName("fields");
+        let rice;
+        for (let j = 0; j < feld.length; j++) {
+            let divList = document.getElementsByTagName("div");
+            for (let i1 = 0; i1 < 9; i1++) {
                 divList[i1].addEventListener("click", function () {
                     this.classList.toggle("select");
                     showsumrice();
@@ -65,15 +65,15 @@ var L3a_chess;
         }
     }
     function showsumrice() {
-        var selectDivs = document.getElementsByClassName("select");
-        var sumrice = 0;
+        let selectDivs = document.getElementsByClassName("select");
+        let sumrice = 0;
         if (selectDivs.length == 0) {
             document.getElementById("alpha").style.display = "none";
         }
         else {
             document.getElementById("alpha").style.display = "inline-block";
         }
-        for (var i2 = 0; i2 < selectDivs.length; i2++) {
+        for (let i2 = 0; i2 < selectDivs.length; i2++) {
             sumrice += Number(selectDivs[i2].textContent);
             document.getElementById("alpha").textContent = "sumofselectedrice:" + "\r\n" + "Dezimal: " + sumrice.toString() + "\r\n" + "Hexadezimal: " + sumrice.toString(16);
         }

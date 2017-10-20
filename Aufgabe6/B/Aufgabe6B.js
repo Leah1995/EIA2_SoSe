@@ -21,8 +21,8 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
-        var dataArr = _input.split(",");
-        var s = {
+        let dataArr = _input.split(",");
+        let s = {
             matrikelnr: parseInt(dataArr[0]),
             name: dataArr[1],
             vorName: dataArr[2],
@@ -31,7 +31,7 @@ var StudiVZ;
             comment: dataArr[5]
         };
         students.push(s);
-        var gender;
+        let gender;
         if (parseInt(dataArr[4]) == 1) {
             gender = "m�nnlich";
         }
@@ -42,9 +42,9 @@ var StudiVZ;
         return "Deine eingegebenen Daten:\n" + "\nMatrikelnr.: " + s.matrikelnr + "\nName: " + s.name + "," + s.vorName + "\nAlter: " + s.age + "\nGeschlecht: " + gender + "\nKommentar: " + s.comment;
     }
     function queryData(_matrikelnr) {
-        for (var i = 0; i < students.length; i++) {
+        for (let i = 0; i < students.length; i++) {
             if (students[i].matrikelnr == _matrikelnr) {
-                var gender = students[i].geschlecht ? "m�nnlich" : "weiblich";
+                let gender = students[i].geschlecht ? "m�nnlich" : "weiblich";
                 return "Abgespeicherte Daten zu folgender Matrikelnummer: " + students[i].matrikelnr + "\n\nName: " + students[i].name + "," + students[i].vorName + "\nAlter: " + students[i].age + "\nGeschlecht: " + gender + "\nKommentar: " + students[i].comment;
             }
             else {

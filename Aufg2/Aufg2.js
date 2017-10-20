@@ -112,7 +112,8 @@ var L4_Schneelandschaft;
 		crc2.fillRect(0, 400, 800, 200);
 		crc2.fillStyle = "#f2f2f2";
 		crc2.fillRect(0, 380, 800, 20);
-		// B�ume zuf�llig hinstellen
+		
+		// Bäume zufällig hinstellen
 		var colors = [];
 		for (var i = 0; i < 20; i++) {
 			var randomX = (Math.random() * (800 - 1)) + 1;
@@ -138,10 +139,6 @@ var L4_Schneelandschaft;
 			} else {
 				drawFlocke(randomX, randomY);
 			}
-//        for (let i = 0; i < 10; i++) {
-//      let x = 150 + Math.random() * 100;
-//      let y = 200 + Math.random() * 60;
-//      drawFlocke(x, y, "white");
   }
 		
 		// Berg
@@ -216,7 +213,7 @@ var L4_Schneelandschaft;
 			crc2.stroke();
 
 			crc2.beginPath();
-			crc2.moveTo(370, 37);
+			crc2.moveTo(370, 30);
 			crc2.lineTo(335, 17);
 			crc2.strokeStyle = "white";
 			crc2.stroke();

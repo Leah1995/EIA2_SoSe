@@ -131,137 +131,136 @@ namespace L4_Schneelandschaft {
                 drawBaum1(randomX, randomY);
             } else {
                 drawBaum2(randomX, randomY);
-            
-        }
-            
-           // Schneeflocken zufällig platzieren
-        var colors = [];
-        for (var i = 0; i < 20; i++) {
-            var randomX = (Math.random() * (800 - 1)) + 1;
-            var randomY = (Math.random() * (550 - 400)) + 400;
-            console.log("X is " + randomX, "Y is " + randomY, randomFlocke);
-            var randomFlocke = Math.floor((Math.random() * 2)) + 1;
-        }    
 
-        // Berg
-        function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string) {
-            crc2.beginPath();
-            crc2.fillStyle = _fillColor;
-            crc2.strokeStyle = _strokeColor;
-            crc2.moveTo(_x - 400, _y + 50);
-            crc2.lineTo(_x, _y - 80);
-            crc2.lineTo(_x + 70, _y - 50);
-            crc2.lineTo(_x + 80, _y - 60);
-            crc2.lineTo(_x + 150, _y + 40);
-            crc2.lineTo(_x + 120, _y + 40);
-            crc2.closePath();
-            crc2.fill();
-        }
-
-        // Baum 1
-        function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string) {
-            // Stamm
-            crc2.beginPath();
-            crc2.moveTo(50, 515);
-            crc2.lineTo(75, 565);
-            crc2.lineTo(25, 565);
-            crc2.closePath();
-            crc2.fillStyle = _trunkColor;
-            crc2.fillRect(124, 467, 12, 23);
-            // Baumkrone
-            crc2.beginPath();
-            crc2.moveTo(130, 415);
-            crc2.lineTo(155, 455);
-            crc2.lineTo(105, 455);
-            crc2.closePath();
-            crc2.fillStyle = _topColor;
-            crc2.fill();
-            crc2.beginPath();
-            crc2.moveTo(130, 425);
-            crc2.lineTo(155, 475);
-            crc2.lineTo(105, 475);
-            crc2.closePath();
-            crc2.fillStyle = _topColor;
-            crc2.fill();
-        }
-
-        // Baum 2
-        function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string) {
-            // Stamm
-            crc2.beginPath();
-            crc2.moveTo(60, 85);
-            crc2.lineTo(85, 135);
-            crc2.lineTo(35, 135);
-            crc2.closePath();
-            crc2.fillStyle = _trunkColor;
-            crc2.fillRect(44, 557, 12, 23);
-            // Baumkrone
-            crc2.beginPath();
-            crc2.moveTo(50, 515);
-            crc2.lineTo(75, 565);
-            crc2.lineTo(25, 565);
-            crc2.closePath();
-            crc2.fillStyle = _topColor;
-            crc2.fill();
-        }
-        
-        // Schneeflocke
-        
-        function drawFlocke(_x: number, _y: number) {
-            
-            crc2.beginPath();
-            crc2.moveTo(350, 40);
-            crc2.lineTo(350, 10);
-            crc2.strokeStyle = "white";
-            crc2.stroke();
-
-            crc2.beginPath();
-            crc2.moveTo(370, 37);
-            crc2.lineTo(335, 17);
-            crc2.strokeStyle = "white";
-            crc2.stroke();
-
-            crc2.beginPath();
-            crc2.moveTo(365, 15);
-            crc2.lineTo(330, 35);
-            crc2.strokeStyle = "white";
-            crc2.stroke();
-            
             }
-            
 
-        //Skilift
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(0, 240, 800, 15); // Anfang, Höhe, Länge, Dicke
+            // Schneeflocken zufällig platzieren
+            var colors = [];
+            for (var i = 0; i < 20; i++) {
+                var randomX = (Math.random() * (800 - 1)) + 1;
+                var randomY = (Math.random() * (550 - 400)) + 400;
+                console.log("X is " + randomX, "Y is " + randomY, randomFlocke);
+                var randomFlocke = Math.floor((Math.random() * 2)) + 1;
+            }
 
-        // Skisitz 1
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(570, 240, 10, 45);
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(650, 240, 10, 45);
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(540, 270, 150, 120);
-        crc2.beginPath();
-        crc2.fillStyle = "#F8FCFE";
-        crc2.fillRect(570, 290, 100, 70);
+            // Berg
+            function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string) {
+                crc2.beginPath();
+                crc2.fillStyle = _fillColor;
+                crc2.strokeStyle = _strokeColor;
+                crc2.moveTo(_x - 400, _y + 50);
+                crc2.lineTo(_x, _y - 80);
+                crc2.lineTo(_x + 70, _y - 50);
+                crc2.lineTo(_x + 80, _y - 60);
+                crc2.lineTo(_x + 150, _y + 40);
+                crc2.lineTo(_x + 120, _y + 40);
+                crc2.closePath();
+                crc2.fill();
+            }
 
-        // Skisitz
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(170, 240, 10, 45);
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(250, 240, 10, 45);
-        crc2.beginPath();
-        crc2.fillStyle = "black";
-        crc2.fillRect(140, 270, 150, 120);
-        crc2.beginPath();
-        crc2.fillStyle = "#F8FCFE";
-        crc2.fillRect(170, 290, 100, 70);
+            // Baum 1
+            function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string) {
+                // Stamm
+                crc2.beginPath();
+                crc2.moveTo(50, 515);
+                crc2.lineTo(75, 565);
+                crc2.lineTo(25, 565);
+                crc2.closePath();
+                crc2.fillStyle = _trunkColor;
+                crc2.fillRect(124, 467, 12, 23);
+                // Baumkrone
+                crc2.beginPath();
+                crc2.moveTo(130, 415);
+                crc2.lineTo(155, 455);
+                crc2.lineTo(105, 455);
+                crc2.closePath();
+                crc2.fillStyle = _topColor;
+                crc2.fill();
+                crc2.beginPath();
+                crc2.moveTo(130, 425);
+                crc2.lineTo(155, 475);
+                crc2.lineTo(105, 475);
+                crc2.closePath();
+                crc2.fillStyle = _topColor;
+                crc2.fill();
+            }
 
+            // Baum 2
+            function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string) {
+                // Stamm
+                crc2.beginPath();
+                crc2.moveTo(60, 85);
+                crc2.lineTo(85, 135);
+                crc2.lineTo(35, 135);
+                crc2.closePath();
+                crc2.fillStyle = _trunkColor;
+                crc2.fillRect(44, 557, 12, 23);
+                // Baumkrone
+                crc2.beginPath();
+                crc2.moveTo(50, 515);
+                crc2.lineTo(75, 565);
+                crc2.lineTo(25, 565);
+                crc2.closePath();
+                crc2.fillStyle = _topColor;
+                crc2.fill();
+            }
+
+            // Schneefloc    
+            function drawFlocke(_x: number, _y: number) {
+
+                crc2.beginPath();
+                crc2.moveTo(350, 40);
+                crc2.lineTo(350, 10);
+                crc2.strokeStyle = "white";
+                crc2.stroke();
+
+                crc2.beginPath();
+                crc2.moveTo(370, 37);
+                crc2.lineTo(335, 17);
+                crc2.strokeStyle = "white";
+                crc2.stroke();
+
+                crc2.beginPath();
+                crc2.moveTo(365, 15);
+                crc2.lineTo(330, 35);
+                crc2.strokeStyle = "white";
+                crc2.stroke();
+
+            }
+
+
+            //Skilift
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(0, 240, 800, 15); // Anfang, Höhe, Länge, Dicke
+
+            // Skisitz 1
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(570, 240, 10, 45);
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(650, 240, 10, 45);
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(540, 270, 150, 120);
+            crc2.beginPath();
+            crc2.fillStyle = "#F8FCFE";
+            crc2.fillRect(570, 290, 100, 70);
+
+            // Skisitz
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(170, 240, 10, 45);
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(250, 240, 10, 45);
+            crc2.beginPath();
+            crc2.fillStyle = "black";
+            crc2.fillRect(140, 270, 150, 120);
+            crc2.beginPath();
+            crc2.fillStyle = "#F8FCFE";
+            crc2.fillRect(170, 290, 100, 70);
+
+        }
     }
-}

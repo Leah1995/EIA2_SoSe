@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var field = 0; // vom "ersten" Feld  an
-    var line = 0; // von der "ersten" Linie an
-    var rice = 1; // Reisk�rner von hier an 1
+    let field = 0; // vom "ersten" Feld  an
+    let line = 0; // von der "ersten" Linie an
+    let rice = 1; // Reisk�rner von hier an 1
     for (field = 0; field < 64; field++) {
-        var div = document.createElement("div");
+        let div = document.createElement("div");
         div.innerText = "" + rice;
         rice = rice * 2; // Anzahl verdoppeln
         document.body.appendChild(div);
