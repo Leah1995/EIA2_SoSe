@@ -123,39 +123,44 @@ namespace L4_Schneelandschaft {
         // Bäume zufällig hinstellen
         let colors: string[] = [];
         for (let i = 0; i < 20; i++) {
-            let randomX = (Math.random() * (800 - 1)) + 1;
-            let randomY = (Math.random() * (550 - 400)) + 400;
+            let randomX: number = (Math.random() * (800 - 1)) + 1;
+            let randomY: number = (Math.random() * (550 - 400)) + 400;
+            let randomBaum1: number = Math.floor((Math.random() * 2)) + 1;
             console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
-            let randomBaum1 = Math.floor((Math.random() * 2)) + 1;
             if (randomBaum1 == 1) {
-                drawBaum1(randomX, randomY);
+                drawBaum1(randomX, randomY, "#cc9966", "#00514c");
             } else {
-                drawBaum2(randomX, randomY);
+                drawBaum2(randomX, randomY, "#4c2e0a", "#44d271");
 
             }
 
             // Schneeflocken zufällig platzieren
-            var colors = [];
-            for (var i = 0; i < 20; i++) {
-                var randomX = (Math.random() * (800 - 1)) + 1;
-                var randomY = (Math.random() * (550 - 400)) + 400;
+            let colors: string[] = [];
+            for (let i = 0; i < 20; i++) {
+                let randomX = (Math.random() * (800 - 1)) + 1;
+                let randomY = (Math.random() * (400 - 500)) + 500;
+                let randomFlocke = Math.floor((Math.random() * 2)) + 1;
                 console.log("X is " + randomX, "Y is " + randomY, randomFlocke);
-                var randomFlocke = Math.floor((Math.random() * 2)) + 1;
-            }
+                if (randomFlocke == 1) {
+                    drawFlocke(randomX, randomY);
+                } else {
+                    drawFlocke(randomX, randomY);
+                }
 
-            // Berg
-            function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string) {
-                crc2.beginPath();
-                crc2.fillStyle = _fillColor;
-                crc2.strokeStyle = _strokeColor;
-                crc2.moveTo(_x - 400, _y + 50);
-                crc2.lineTo(_x, _y - 80);
-                crc2.lineTo(_x + 70, _y - 50);
-                crc2.lineTo(_x + 80, _y - 60);
-                crc2.lineTo(_x + 150, _y + 40);
-                crc2.lineTo(_x + 120, _y + 40);
-                crc2.closePath();
-                crc2.fill();
+                // Berg
+                function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string) {
+                    crc2.beginPath();
+                    crc2.fillStyle = _fillColor;
+                    crc2.strokeStyle = _strokeColor;
+                    crc2.moveTo(_x - 400, _y + 50);
+                    crc2.lineTo(_x, _y - 80);
+                    crc2.lineTo(_x + 70, _y - 50);
+                    crc2.lineTo(_x + 80, _y - 60);
+                    crc2.lineTo(_x + 150, _y + 40);
+                    crc2.lineTo(_x + 120, _y + 40);
+                    crc2.closePath();
+                    crc2.fill();
+                }
             }
 
             // Baum 1
@@ -263,4 +268,6 @@ namespace L4_Schneelandschaft {
             crc2.fillRect(170, 290, 100, 70);
 
         }
+
     }
+}

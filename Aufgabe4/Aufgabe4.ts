@@ -151,8 +151,8 @@ namespace L4_Blumenwiese {
         for (let i: number = 0; i < 70; i++) {
             let randomX: number = (Math.random() * (400 - 1)) + 1;
             let randomY: number = (Math.random() * (250 - 200)) + 200;
-            console.log("X is " + randomX, "Y is " + randomY, randomSunflower);
             let randomSunflower: number = Math.floor((Math.random() * 2)) + 1;
+            console.log("X is " + randomX, "Y is " + randomY, randomSunflower);
             if (randomSunflower == 1) {
                 drawSunflower(randomX, randomY, "#44d580", "#332900", "#ffd11a");
             } else {
