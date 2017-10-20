@@ -213,8 +213,8 @@ namespace L4_Blumenwiese {
             crc2.arc(_x, _y - 20, 5, 0, 2 * Math.PI);
             crc2.fillStyle = _stamenColor;
             crc2.fill();
-
         }
+
         function drawDaisy(_x: number, _y: number, _stalkColor: string, _stamenColor: string, _petalColor: string): void {
             crc2.beginPath();
             crc2.strokeStyle = _stalkColor;

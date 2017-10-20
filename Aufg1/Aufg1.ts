@@ -11,9 +11,11 @@ namespace L4_Schneelandschaft {
 
         // Sky
         crc2.fillStyle = "#ccf5ff";
-        crc2.fillRect(0, 0, 800, 600)
+        crc2.fillRect(0, 0, 800, 600);
+        
+        // Skilift
         crc2.fillStyle = "black";
-        crc2.fillRect(0, 230, 800, 15)
+        crc2.fillRect(0, 230, 800, 15);
 
         // Funktionen
         drawBerg(450, 370, "#c2d6d6", "#ffffff");
@@ -22,7 +24,8 @@ namespace L4_Schneelandschaft {
         drawBerg(200, 360, "#c2d6d6", "#d9d9d9");
         drawBaum1(800, 200, "#cc9966", "#00514c");
         drawBaum2(800, 200, "#4c2e0a", "#44d271");
-        //        drawSkilift;
+        drawSkilift(200, 400);
+        drawSkisitz(100, 300);
 
         // Sonne
         crc2.beginPath();
@@ -116,26 +119,26 @@ namespace L4_Schneelandschaft {
 
         // Schnee
         crc2.fillStyle = "#white";
-        crc2.fillRect(0, 400, 800, 200)
-        crc2.fillStyle = "#f2f2f2"
-        crc2.fillRect(0, 380, 800, 20)
+        crc2.fillRect(0, 400, 800, 200);
+        crc2.fillStyle = "#f2f2f2";
+        crc2.fillRect(0, 380, 800, 20);
 
         // Bäume zufällig hinstellen
-        var colors: string[] = [];
-        for (var i = 0; i < 20; i++) {
-            var randomX = (Math.random() * (800 - 1)) + 1;
-            var randomY = (Math.random() * (550 - 400)) + 400;
+        let colors: string[] = [];
+        for (let i: number = 0; i < 20; i++) {
+            let randomX: number = (Math.random() * (400 - 1)) + 1;
+            let randomY: number = (Math.random() * (250 - 200)) + 200;
+            let randomBaum1: number = Math.floor((Math.random() * 2)) + 1;
             console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
-            var randomBaum1 = Math.floor((Math.random() * 2)) + 1;
             if (randomBaum1 == 1) {
-                drawBaum1(randomX, randomY);
+                drawBaum1(randomX, randomY, "#cc9966", "#00514c");
             } else {
-                drawBaum2(randomX, randomY);
+                drawBaum2(randomX, randomY, "#4c2e0a", "#44d271");
             }
         }
 
         // Berg
-        function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string) {
+        function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
             crc2.beginPath();
             crc2.fillStyle = _fillColor;
             crc2.strokeStyle = _strokeColor;
@@ -150,7 +153,7 @@ namespace L4_Schneelandschaft {
         }
 
         // Baum 1
-        function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string) {
+        function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(50, 515);
@@ -177,7 +180,7 @@ namespace L4_Schneelandschaft {
         }
 
         // Baum 2
-        function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string) {
+        function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(60, 85);
@@ -197,7 +200,7 @@ namespace L4_Schneelandschaft {
         }
 
         //Skilift
-        function drawSkilift(_x: number, _y: number) {
+        function drawSkilift(_x: number, _y: number): void {
             crc2.beginPath();
             crc2.strokeStyle = "black";
             crc2.lineWidth = 7;
@@ -207,7 +210,7 @@ namespace L4_Schneelandschaft {
         }
         
         // Skisitz
-        function drawSkisitz(_x: number, _y: number) {
+        function drawSkisitz(_x: number, _y: number): void {
             crc2.beginPath();
             crc2.strokeStyle = "black";
             crc2.lineWidth = 20;
