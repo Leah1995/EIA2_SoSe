@@ -18,8 +18,8 @@ namespace L4_Schneelandschaft {
         drawBerg(300, 380, "#c2d6d6", "#f2f2f2");
         drawBerg(700, 350, "#c2d6d6", "#e6e6e6");
         drawBerg(200, 360, "#c2d6d6", "#d9d9d9");
-        drawBaum1(800, 200, "#cc9966", "#00514c");
-        drawBaum2(800, 200, "#4c2e0a", "#44d271");
+        drawBaum1(400, 200, "#cc9966", "#44d271");
+        drawBaum2(800, 200, "#4c2e0a", "#00514c");
         drawFlocke(800, 200);
 
         // Sonne
@@ -125,27 +125,23 @@ namespace L4_Schneelandschaft {
             let randomBaum1: number = Math.floor((Math.random() * 2)) + 1;
             console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
             if (randomBaum1 == 1) {
-                drawBaum1(randomX, randomY, "#cc9966", "#00514c");
+                drawBaum1(randomX, randomY, "#cc9966", "#44d271");
             } else {
-                drawBaum2(randomX, randomY, "#4c2e0a", "#44d271");
+                drawBaum2(randomX, randomY, "#4c2e0a", "#00514c");
             }
         }
 
         // Schneeflocken zufällig platzieren
-        for (let i: number = 0; i < 20; i++) {
+        for (let i: number = 0; i < 200; i++) {
             let randomX: number = (Math.random() * (800 - 1)) + 1;
-            let randomY: number = (Math.random() * (400 - 500)) + 500;
+            let randomY: number = (Math.random() * (550 - 400)) + 400;
             let randomFlocke: number = Math.floor((Math.random() * 2)) + 1;
             console.log("X is " + randomX, "Y is " + randomY, randomFlocke);
-            if (randomFlocke == 1) {
-                drawFlocke(randomX, randomY);
-            } else {
-                drawFlocke(randomX, randomY);
-            }
         }
 
         // Berg
-        function drawBerg(_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
+        function drawBerg
+        (_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
             crc2.beginPath();
             crc2.fillStyle = _fillColor;
             crc2.strokeStyle = _strokeColor;
@@ -161,7 +157,8 @@ namespace L4_Schneelandschaft {
 
 
         // Baum 1
-        function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+        function drawBaum1
+        (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(50, 515);
@@ -188,7 +185,8 @@ namespace L4_Schneelandschaft {
         }
 
         // Baum 2
-        function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+        function drawBaum2
+        (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(60, 85);
@@ -209,31 +207,29 @@ namespace L4_Schneelandschaft {
 
         // Schneeflocken
         function drawFlocke(_x: number, _y: number): void {
-
+            // gerade Linie
             crc2.beginPath();
-            crc2.moveTo(355, 40);
+            crc2.moveTo(355, 30);
             crc2.lineTo(355, 10);
             crc2.strokeStyle = "white";
             crc2.lineWidth = 5;
             crc2.stroke();
 
+            // schiefe Linien
             crc2.beginPath();
-            crc2.moveTo(370, 37);
-            crc2.lineTo(345, 17);
+            crc2.moveTo(365, 26);
+            crc2.lineTo(345, 15);
             crc2.strokeStyle = "white";
             crc2.stroke();
-
             crc2.beginPath();
             crc2.moveTo(365, 15);
-            crc2.lineTo(340, 35);
+            crc2.lineTo(345, 26);
             crc2.strokeStyle = "white";
             crc2.stroke();
 
         }
 
-
         //Skilift
-
         crc2.beginPath();
         crc2.fillStyle = "black";
         crc2.fillRect(0, 240, 800, 15); // Anfang, Höhe, Länge, Dicke

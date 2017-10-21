@@ -184,8 +184,8 @@ namespace L4_Canvas {
     // Put Flowers at random
     function drawRandomSunflowers(): void {
         var flowers: string[] = [
-            drawSunflower(randomX, randomY, "#44d580", "#332900", "#ffd11a"),
-            drawDaisy(randomX, randomY, "#40ff00", "yellow", "white")
+            drawSunflower(randomX: number, randomY: number, "#44d580", "#332900", "#ffd11a");
+            drawDaisy(randomX, randomY, "#40ff00", "yellow", "white");
         ];        
         for (var i: number = 0; i < 25; i++) {
             var randomX: number = (Math.random() * (400 - 1)) + 1;
@@ -310,4 +310,4 @@ function drawDaisy(_x: number, _y: number, _stalkColor: string, _stamenColor: st
 
 
 
-} //namespace
+ //namespace

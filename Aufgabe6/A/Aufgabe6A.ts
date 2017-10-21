@@ -9,8 +9,8 @@ window.addEventListener("load", init);
 let crc2: CanvasRenderingContext2D;
 let beeNumber: number = 10;
 let imgData: ImageData;
-let beeColors: string[] = ["yellow", "black", "orange"]
-let randomBeeColor = beeColors[Math.floor(Math.random() * beeColors.length)];
+let beeColors: string[] = ["yellow", "black", "orange"];
+let randomBeeColor: number = beeColors[Math.floor(Math.random() * beeColors.length)];
 
 function init(_event: Event): void {
     let canvas: HTMLCanvasElement;
@@ -29,7 +29,7 @@ function init(_event: Event): void {
     imgData = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
 
     for (let i: number = 0; i < beeNumber; i++) {
-        letb: Bee = { x: 65, y: 183, color: "orange" };
+        let: Bee = { x: 65, y: 183, color: "orange" };
         bees[i] = b;
     }
     console.log(bees);
@@ -311,45 +311,45 @@ function drawDaisy(_x: number, _y: number, _stalkColor: string, _stamenColor: st
     crc2.fillStyle = _stamenColor;
 }
 
- function drawHive(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.strokeStyle = "#CF882B";
-        crc2.fillStyle = "#CF882B";
-        crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 15, _y);
-        crc2.lineTo(_x + 20, _y + 20);
-        crc2.lineTo(_x - 5, _y + 20);
-        crc2.closePath();
-        crc2.moveTo(_x - 5, _y + 20);
-        crc2.lineTo(_x, _y + 25);
-        crc2.lineTo(_x + 15, _y + 25);
-        crc2.lineTo(_x + 20, _y + 20);
-        crc2.stroke();
-        crc2.fill();
-        crc2.closePath();
+function drawHive(_x: number, _y: number): void {
+    crc2.beginPath();
+    crc2.strokeStyle = "#CF882B";
+    crc2.fillStyle = "#CF882B";
+    crc2.moveTo(_x, _y);
+    crc2.lineTo(_x + 15, _y);
+    crc2.lineTo(_x + 20, _y + 20);
+    crc2.lineTo(_x - 5, _y + 20);
+    crc2.closePath();
+    crc2.moveTo(_x - 5, _y + 20);
+    crc2.lineTo(_x, _y + 25);
+    crc2.lineTo(_x + 15, _y + 25);
+    crc2.lineTo(_x + 20, _y + 20);
+    crc2.stroke();
+    crc2.fill();
+    crc2.closePath();
 
-crc2.beginPath();
-        crc2.strokeStyle = "#CF882B";
-        crc2.moveTo(_x + 5, _y);
-        crc2.lineTo(_x + 5, _y - 5);
-        crc2.lineTo(_x + 10, _y - 5);
-        crc2.lineTo(_x + 10, _y);
-        crc2.stroke();
-        crc2.closePath();
-
-
-        crc2.beginPath();
-        crc2.moveTo(_x + 5, _y + 15);
-        crc2.lineTo(_x + 10, _y + 15);
-        crc2.lineTo(_x + 12, _y + 20);
-        crc2.lineTo(_x + 3, _y + 20);
-        crc2.lineTo(_x + 5, _y + 15);
+    crc2.beginPath();
+    crc2.strokeStyle = "#CF882B";
+    crc2.moveTo(_x + 5, _y);
+    crc2.lineTo(_x + 5, _y - 5);
+    crc2.lineTo(_x + 10, _y - 5);
+    crc2.lineTo(_x + 10, _y);
+    crc2.stroke();
+    crc2.closePath();
 
 
-        crc2.strokeStyle = "#A66F27";
-        crc2.fillStyle = "#A66F27";
+    crc2.beginPath();
+    crc2.moveTo(_x + 5, _y + 15);
+    crc2.lineTo(_x + 10, _y + 15);
+    crc2.lineTo(_x + 12, _y + 20);
+    crc2.lineTo(_x + 3, _y + 20);
+    crc2.lineTo(_x + 5, _y + 15);
 
-        crc2.stroke();
-        crc2.fill();
-    }
-} //namespace
+
+    crc2.strokeStyle = "#A66F27";
+    crc2.fillStyle = "#A66F27";
+
+    crc2.stroke();
+    crc2.fill();
+}
+ //namespace
