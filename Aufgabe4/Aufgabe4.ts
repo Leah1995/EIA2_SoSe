@@ -17,6 +17,7 @@ namespace L4_Blumenwiese {
         crc2.lineTo(400, 250);
         crc2.fillStyle = "#ccf5ff"; //blau
         crc2.fill();
+        
         drawBerg(250, 170, "#c2d6d6", "#999966");
 
         // Sun
