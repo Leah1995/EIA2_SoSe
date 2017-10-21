@@ -141,7 +141,7 @@ namespace L4_Schneelandschaft {
 
         // Berg
         function drawBerg
-        (_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
+            (_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
             crc2.beginPath();
             crc2.fillStyle = _fillColor;
             crc2.strokeStyle = _strokeColor;
@@ -158,7 +158,7 @@ namespace L4_Schneelandschaft {
 
         // Baum 1
         function drawBaum1
-        (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+            (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(50, 515);
@@ -186,7 +186,7 @@ namespace L4_Schneelandschaft {
 
         // Baum 2
         function drawBaum2
-        (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+            (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
             crc2.beginPath();
             crc2.moveTo(60, 85);
