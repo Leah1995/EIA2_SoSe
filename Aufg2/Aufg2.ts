@@ -213,13 +213,6 @@ namespace L4_Schneelandschaft {
             crc2.closePath();
             crc2.fillStyle = _topColor;
             crc2.fill();
-            crc2.beginPath();
-            crc2.moveTo(_x + 25, _y + 50);
-            crc2.lineTo(_x + 25, _y + 50);
-            crc2.lineTo(_x, _y);
-            crc2.closePath();
-            crc2.fillStyle = _topColor;
-            crc2.fill();
         }
 
         // Baum 2
