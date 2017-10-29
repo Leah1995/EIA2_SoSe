@@ -7,8 +7,8 @@ namespace L4_Schneelandschaft {
     let skiY: number[] = [];
     let flockeX: number[] = [];
     let flockeY: number[] = [];
-    let flockeNumber: number = 160;
-    let skiNumber: number = 1;
+    let flockeNumber: number = 280;
+    let skiNumber: number = 7;
     let imgData: ImageData;
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -19,48 +19,49 @@ namespace L4_Schneelandschaft {
         crc2.fillRect(0, 0, canvas.width, canvas.height);
 
         // Animation der Schneeflocken
-        for (let i: number = 100; i < flockeNumber; i++) {
+        for (let i: number = 10; i < flockeNumber; i++) {
             //Start der Flocken
             x[i] = 20;
             y[i] = 70;
-        }
-
-        // Animation der Skifahrer
-        for (let i: number = 3; i < skiNumber; i++) {
-            skiX[i] = 10;
-            skiY[i] = 110;
         }
 
         function animate(): void {
             console.log("Animate called");
             crc2.putImageData(imgData, 0, 0);
             for (let i: number = 0; i < flockeNumber; i++) {
-                x[i] += Math.random() * 200 - 20;
-                y[i] += Math.random() * 150 + 5;
-                skiX[i] += Math.random() * 2 - 1;
-                skiY[i] += Math.random() * 1 + 5;
+                x[i] += Math.random() * 600 - 10;
+                y[i] += Math.random() * 800 - 10;
                 if (x[i] > crc2.canvas.width) {
                     x[i] = 0;
-                }
-                if (skiX[i] > crc2.canvas.width) {
-                    skiY[i] = 0;
                 }
                 if (y[i] > crc2.canvas.height) {
                     y[i] = 0;
                 }
-                if (skiX[i] > crc2.canvas.height) {
-                    skiY[i] = 0;
-                }
                 if (y[i] < 0) {
                     y[i] = crc2.canvas.height;
+                }
+                drawFlocke(x[i], y[i]);
+            }
+            // Animation der Skifahrer
+            for (let i: number = 1; i < skiNumber; i++) {
+                skiX[i] = 10;
+                skiY[i] = 110;
+            }
+            for (let i: number = 0; i < skiNumber; i++) {
+                skiX[i] += Math.random() * 900 - 10;
+                skiY[i] += Math.random() * 20 - 20;
+                if (skiX[i] > crc2.canvas.width) {
+                    skiY[i] = 0;
+                }
+                if (skiX[i] > crc2.canvas.height) {
+                    skiY[i] = 0;
                 }
                 if (skiX[i] < 0) {
                     skiY[i] = crc2.canvas.height;
                 }
-                drawFlocke(x[i], y[i]);
-                drawSki(x[i], y[i]);
+                drawSki(skiX[i], skiY[i]);
             }
-            window.setTimeout(animate, 150);
+            window.setTimeout(animate, 200);
         }
 
         // Sky
@@ -281,35 +282,7 @@ namespace L4_Schneelandschaft {
 
         imgData = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
         animate();
-
-        // Schneeflocken
-        function drawFlocke(_x: number, _y: number): void {
-            // gerade Linie
-            crc2.beginPath();
-            crc2.moveTo(_x, _y - 15);
-            crc2.lineTo(_x, _y + 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
-
-            // schiefe Linien
-            crc2.beginPath();
-            crc2.moveTo(_x - 12, _y + 5);
-            crc2.lineTo(_x + 12, _y - 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
-
-            crc2.beginPath();
-            crc2.moveTo(_x + 12, _y + 5);
-            crc2.lineTo(_x - 12, _y - 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
-        }
-
-        // Animation der Skifahrer
-
+        
         // Skifahrer
         function drawSki(_x: number, _y: number): void {
             // Körper
@@ -345,7 +318,32 @@ namespace L4_Schneelandschaft {
             crc2.lineWidth = 2;
             crc2.stroke();
             crc2.closePath();
+        }
 
+        // Schneeflocken
+        function drawFlocke(_x: number, _y: number): void {
+            // gerade Linie
+            crc2.beginPath();
+            crc2.moveTo(_x, _y - 15);
+            crc2.lineTo(_x, _y + 10);
+            crc2.strokeStyle = "white";
+            crc2.lineWidth = 5;
+            crc2.stroke();
+
+            // schiefe Linien
+            crc2.beginPath();
+            crc2.moveTo(_x - 12, _y + 5);
+            crc2.lineTo(_x + 12, _y - 10);
+            crc2.strokeStyle = "white";
+            crc2.lineWidth = 5;
+            crc2.stroke();
+
+            crc2.beginPath();
+            crc2.moveTo(_x + 12, _y + 5);
+            crc2.lineTo(_x - 12, _y - 10);
+            crc2.strokeStyle = "white";
+            crc2.lineWidth = 5;
+            crc2.stroke();
         }
     }
 }
