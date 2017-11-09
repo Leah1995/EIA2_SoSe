@@ -28,7 +28,7 @@ var L4_Schneelandschaft;
             console.log("Animate called");
             crc2.putImageData(imgData, 0, 0);
             for (let i = 0; i < flockeNumber; i++) {
-                x[i] += Math.random() * 600 - 10;
+                x[i] += Math.random() * 600 - 40;
                 y[i] += Math.random() * 800 - 10;
                 if (x[i] > crc2.canvas.width) {
                     x[i] = 0;
@@ -47,8 +47,8 @@ var L4_Schneelandschaft;
                 skiY[i] = 110;
             }
             for (let i = 0; i < skiNumber; i++) {
-                skiX[i] += Math.random() * 900 - 10;
-                skiY[i] += Math.random() * 20 - 20;
+                skiX[i] += Math.random() * 600 / 10;
+                skiY[i] += Math.random() * 50 + 20;
                 if (skiX[i] > crc2.canvas.width) {
                     skiY[i] = 0;
                 }
@@ -324,4 +324,4 @@ var L4_Schneelandschaft;
         }
     }
 })(L4_Schneelandschaft || (L4_Schneelandschaft = {}));
-//# sourceMappingURL=Aufg3.js.map
+//# sourceMappingURL=Aufg4.js.map

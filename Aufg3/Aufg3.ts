@@ -61,7 +61,7 @@ namespace L4_Schneelandschaft {
                 }
                 drawSki(skiX[i], skiY[i]);
             }
-            window.setTimeout(animate, 200);
+            window.setTimeout(animate, 200); // Geschwindigkeit
         }
 
         // Sky
