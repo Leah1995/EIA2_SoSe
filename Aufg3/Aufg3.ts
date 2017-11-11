@@ -7,9 +7,12 @@ namespace L4_Schneelandschaft {
     let skiY: number[] = [];
     let flockeX: number[] = [];
     let flockeY: number[] = [];
+    
     let flockeNumber: number = 280;
     let skiNumber: number = 7;
+    
     let imgData: ImageData;
+    
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
         canvas = document.getElementsByTagName("canvas")[0];
