@@ -28,8 +28,8 @@ var L4_Schneelandschaft;
             console.log("Animate called");
             crc2.putImageData(imgData, 0, 0);
             for (let i = 0; i < flockeNumber; i++) {
-                x[i] += Math.random() * 600 - 10;
-                y[i] += Math.random() * 800 - 10;
+                x[i] += Math.random() * 400;
+                y[i] += Math.random() * 600;
                 if (x[i] > crc2.canvas.width) {
                     x[i] = 0;
                 }
@@ -52,12 +52,12 @@ var L4_Schneelandschaft;
                 if (skiX[i] > crc2.canvas.width) {
                     skiY[i] = 0;
                 }
-                if (skiX[i] > crc2.canvas.height) {
-                    skiY[i] = 0;
-                }
-                if (skiX[i] < 0) {
-                    skiY[i] = crc2.canvas.height;
-                }
+                //                if (skiX[i] > crc2.canvas.height) {
+                //                    skiY[i] = 0;
+                //                }
+                //                if (skiX[i] < 0) {
+                //                    skiY[i] = crc2.canvas.height;
+                //                }
                 drawSki(skiX[i], skiY[i]);
             }
             window.setTimeout(animate, 200); // Geschwindigkeit

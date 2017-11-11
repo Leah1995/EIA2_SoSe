@@ -7,12 +7,12 @@ namespace L4_Schneelandschaft {
     let skiY: number[] = [];
     let flockeX: number[] = [];
     let flockeY: number[] = [];
-    
+
     let flockeNumber: number = 280;
     let skiNumber: number = 7;
-    
+
     let imgData: ImageData;
-    
+
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
         canvas = document.getElementsByTagName("canvas")[0];
@@ -32,8 +32,8 @@ namespace L4_Schneelandschaft {
             console.log("Animate called");
             crc2.putImageData(imgData, 0, 0);
             for (let i: number = 0; i < flockeNumber; i++) {
-                x[i] += Math.random() * 600 - 10;
-                y[i] += Math.random() * 800 - 10;
+                x[i] += Math.random() * 400;
+                y[i] += Math.random() * 600;
                 if (x[i] > crc2.canvas.width) {
                     x[i] = 0;
                 }
@@ -56,12 +56,12 @@ namespace L4_Schneelandschaft {
                 if (skiX[i] > crc2.canvas.width) {
                     skiY[i] = 0;
                 }
-                if (skiX[i] > crc2.canvas.height) {
-                    skiY[i] = 0;
-                }
-                if (skiX[i] < 0) {
-                    skiY[i] = crc2.canvas.height;
-                }
+                //                if (skiX[i] > crc2.canvas.height) {
+                //                    skiY[i] = 0;
+                //                }
+                //                if (skiX[i] < 0) {
+                //                    skiY[i] = crc2.canvas.height;
+                //                }
                 drawSki(skiX[i], skiY[i]);
             }
             window.setTimeout(animate, 200); // Geschwindigkeit
@@ -285,7 +285,7 @@ namespace L4_Schneelandschaft {
 
         imgData = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
         animate();
-        
+
         // Skifahrer
         function drawSki(_x: number, _y: number): void {
             // Körper

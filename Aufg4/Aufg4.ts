@@ -1,4 +1,6 @@
-namespace L04_InterfaceArray {
+namespace L4_Schneelandschaft {
+
+    // Interface
     interface SkiInfo {
         skiX: number;
         skiY: number;
@@ -20,15 +22,16 @@ namespace L04_InterfaceArray {
 
         console.log("setTimeout");
         animate();
-        let skiNumber: number = 7;
+        let skiNumber: number = 4;
         for (let i: number = 0; i < skiNumber; i++) {
             ski[i] = {
-                skiX: 100,
-                skiY: 200,
+                skiX: 5,
+                skiY: 1,
                 skidX: Math.random() * 5,
                 skidY: Math.random() * 2,
                 color: "hsl(" + Math.random() * -100 + ", 70%, 50%)"
             };
+
         }
     }
 
@@ -38,18 +41,23 @@ namespace L04_InterfaceArray {
             drawSki(ski[i]);
         }
 
-        window.setTimeout(animate, 10);
+        window.setTimeout(animate, 50);
     }
 
     function drawSki(_ski: SkiInfo): void {
         _ski.skiX += _ski.skidX;
         _ski.skiY += _ski.skidY;
         crc2.fillStyle = _ski.color;
+        if (_ski.skiX > 800) {
+            _ski.skiX = -80;
+        }
+
         // Körper
         crc2.beginPath();
         crc2.arc(_ski.skiX + _ski.skiY + 92, 445, 5, 3, 2 * Math.PI);
         crc2.fill();
         crc2.fillRect(_ski.skiX + _ski.skiY + 87, 445, 10, 31);
+        crc2.closePath();
         crc2.beginPath();
         crc2.moveTo(_ski.skiX + _ski.skiY + 90, 450);
         crc2.lineTo(_ski.skiX + _ski.skiY + 107, 455);
@@ -58,14 +66,10 @@ namespace L04_InterfaceArray {
         crc2.closePath();
         // Kopf
         crc2.beginPath();
-        crc2.arc(_ski.skiX + _ski.skiY +  92, 435, 6, 0, 2 * Math.PI);
+        crc2.arc(_ski.skiX + _ski.skiY + 92, 435, 5.5, 0, 2 * Math.PI);
         crc2.fillStyle = "#fff7b5";
         crc2.fill();
-        // Helm
-        crc2.beginPath();
-        crc2.arc(_ski.skiX + _ski.skiY + 90, 433, 7, 2, 2 * Math.PI);
-        crc2.fillStyle = "#FF99FF";
-        crc2.fill();
+        crc2.closePath();
         // Skier
         crc2.fillStyle = "#121219";
         crc2.fillRect(_ski.skiX + _ski.skiY + 85, 476, 40, 4);
@@ -75,13 +79,16 @@ namespace L04_InterfaceArray {
         crc2.lineWidth = 2;
         crc2.stroke();
         crc2.closePath();
-
+        // Helm
+        crc2.beginPath();
+        crc2.arc(_ski.skiX + _ski.skiY + 90, 433, 7.5, 2, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
     }
 
     namespace L4_Schneelandschaft {
         window.addEventListener("load", init);
         let crc2: CanvasRenderingContext2D;
-
 
         let x: number[] = [];
         let dx: number[] = [];
@@ -94,8 +101,7 @@ namespace L04_InterfaceArray {
         let flockeX: number[] = [];
         let flockeY: number[] = [];
 
-        let flockeNumber: number = 80;
-
+        let flockeNumber: number = 40;
 
         let imgData: ImageData;
 
@@ -111,17 +117,8 @@ namespace L04_InterfaceArray {
                 console.log("Animate called");
                 crc2.putImageData(imgData, 0, 0);
                 for (let i: number = 0; i < flockeNumber; i++) {
-                    x[i] = 0 + Math.random() * 800;
+                    x[i] = 0 + Math.random() * canvas.width;
                     y[i] = 0 + Math.random() * 600;
-                    if (x[i] > crc2.canvas.width) {
-                        x[i] = 0;
-                    }
-                    if (y[i] > crc2.canvas.height) {
-                        y[i] = 0;
-                    }
-                    if (y[i] < 0) {
-                        y[i] = crc2.canvas.height;
-                    }
                     drawFlocke(x[i], y[i]);
                 }
                 window.setTimeout(animate, 30); // Geschwindigkeit
