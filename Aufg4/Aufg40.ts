@@ -2,10 +2,11 @@ namespace L4_Schneelandschaft {
     window.addEventListener("load", init);
     let crc2: CanvasRenderingContext2D;
 
+    // Flockenarray
     let x: number[] = [];
     let y: number[] = [];
 
-    let flockeNumber: number = 40;
+    let flockeNumber: number = 20;
 
     let imgData: ImageData;
 
@@ -150,7 +151,7 @@ namespace L4_Schneelandschaft {
         crc2.fillStyle = "white";
         crc2.fill();
 
-        // Schnee
+        // Schneelandschaft
         crc2.fillStyle = "#white";
         crc2.fillRect(0, 400, 800, 200);
         crc2.fillStyle = "#f2f2f2";
@@ -208,7 +209,6 @@ namespace L4_Schneelandschaft {
             crc2.fillStyle = _topColor;
             crc2.fill();
         }
-
         // Baum 2
         function drawBaum2
             (_x: number, _y: number, _trunkColor: string, _topColor: string): void {
@@ -229,20 +229,19 @@ namespace L4_Schneelandschaft {
             crc2.fillStyle = _topColor;
             crc2.fill();
         }
-
     }
 
     function animate(): void {
         console.log("Animate called");
         crc2.putImageData(imgData, 0, 0);
 
+        window.setTimeout(animate, 10); // Geschwindigkeit
 
         for (let i: number = 0; i < flockeNumber; i++) {
             x[i] = 0 + Math.random() * 800;
-            y[i] = 0 + Math.random() * 600;
+            y[i] = 0 + Math.random() * 400;
             drawFlocke(x[i], y[i]);
         }
-        window.setTimeout(animate, 30); // Geschwindigkeit
     }
     // Schneeflocken
     function drawFlocke(_x: number, _y: number): void {
@@ -268,5 +267,7 @@ namespace L4_Schneelandschaft {
         crc2.strokeStyle = "white";
         crc2.lineWidth = 5;
         crc2.stroke();
+
+        crc2.closePath();
     }
 }
