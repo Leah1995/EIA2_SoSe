@@ -38,8 +38,9 @@ var L4_Schneelandschaft;
             _ski.skiY += _ski.skidY;
             crc2.fillStyle = _ski.color;
             // Skifahrer tauchen wieder auf
-            if (_ski.skiX > 500) {
-                _ski.skiX = 30;
+            if (_ski.skiX > 800) {
+                _ski.skiX = 0;
+                _ski.skiY = 10;
             }
             // K�rper
             crc2.beginPath();

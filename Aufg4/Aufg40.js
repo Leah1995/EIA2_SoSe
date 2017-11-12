@@ -3,9 +3,7 @@ var L4_Schneelandschaft;
     window.addEventListener("load", init);
     let crc2;
     let x = [];
-    let dx = [];
     let y = [];
-    let dy = [];
     let flockeNumber = 40;
     let imgData;
     function init(_event) {

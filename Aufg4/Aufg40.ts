@@ -3,9 +3,7 @@
         let crc2: CanvasRenderingContext2D;
 
         let x: number[] = [];
-        let dx: number[] = [];
         let y: number[] = [];
-        let dy: number[] = [];
 
         let flockeNumber: number = 40;
 
@@ -19,6 +17,8 @@
             function animate(): void {
                 console.log("Animate called");
                 crc2.putImageData(imgData, 0, 0);
+                
+                
                 for (let i: number = 0; i < flockeNumber; i++) {
                     x[i] = 0 + Math.random() * canvas.width;
                     y[i] = 0 + Math.random() * 600;
