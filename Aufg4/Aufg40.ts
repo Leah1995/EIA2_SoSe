@@ -14,8 +14,6 @@ namespace L4_Schneelandschaft {
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
-
-
         // Sky
         crc2.fillStyle = "#ccf5ff";
         crc2.fillRect(0, 0, 800, 370);
@@ -171,7 +169,6 @@ namespace L4_Schneelandschaft {
             }
         }
 
-
         // Berg
         function drawBerg
             (_x: number, _y: number, _strokeColor: string, _fillColor: string): void {
@@ -233,42 +230,43 @@ namespace L4_Schneelandschaft {
             crc2.fill();
         }
 
-        function animate(): void {
-            console.log("Animate called");
-            crc2.putImageData(imgData, 0, 0);
+    }
+
+    function animate(): void {
+        console.log("Animate called");
+        crc2.putImageData(imgData, 0, 0);
 
 
-            for (let i: number = 0; i < flockeNumber; i++) {
-                x[i] = 0 + Math.random() * canvas.width;
-                y[i] = 0 + Math.random() * 600;
-                drawFlocke(x[i], y[i]);
-            }
-            window.setTimeout(animate, 30); // Geschwindigkeit
+        for (let i: number = 0; i < flockeNumber; i++) {
+            x[i] = 0 + Math.random() * 800;
+            y[i] = 0 + Math.random() * 600;
+            drawFlocke(x[i], y[i]);
         }
-        // Schneeflocken
-        function drawFlocke(_x: number, _y: number): void {
-            // gerade Linie
-            crc2.beginPath();
-            crc2.moveTo(_x, _y - 15);
-            crc2.lineTo(_x, _y + 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
+        window.setTimeout(animate, 30); // Geschwindigkeit
+    }
+    // Schneeflocken
+    function drawFlocke(_x: number, _y: number): void {
+        // gerade Linie
+        crc2.beginPath();
+        crc2.moveTo(_x, _y - 15);
+        crc2.lineTo(_x, _y + 10);
+        crc2.strokeStyle = "white";
+        crc2.lineWidth = 5;
+        crc2.stroke();
 
-            // schiefe Linien
-            crc2.beginPath();
-            crc2.moveTo(_x - 12, _y + 5);
-            crc2.lineTo(_x + 12, _y - 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
+        // schiefe Linien
+        crc2.beginPath();
+        crc2.moveTo(_x - 12, _y + 5);
+        crc2.lineTo(_x + 12, _y - 10);
+        crc2.strokeStyle = "white";
+        crc2.lineWidth = 5;
+        crc2.stroke();
 
-            crc2.beginPath();
-            crc2.moveTo(_x + 12, _y + 5);
-            crc2.lineTo(_x - 12, _y - 10);
-            crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
-            crc2.stroke();
-        }
+        crc2.beginPath();
+        crc2.moveTo(_x + 12, _y + 5);
+        crc2.lineTo(_x - 12, _y - 10);
+        crc2.strokeStyle = "white";
+        crc2.lineWidth = 5;
+        crc2.stroke();
     }
 }
