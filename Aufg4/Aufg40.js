@@ -10,16 +10,6 @@ var L4_Schneelandschaft;
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
-        function animate() {
-            console.log("Animate called");
-            crc2.putImageData(imgData, 0, 0);
-            for (let i = 0; i < flockeNumber; i++) {
-                x[i] = 0 + Math.random() * canvas.width;
-                y[i] = 0 + Math.random() * 600;
-                drawFlocke(x[i], y[i]);
-            }
-            window.setTimeout(animate, 30); // Geschwindigkeit
-        }
         // Sky
         crc2.fillStyle = "#ccf5ff";
         crc2.fillRect(0, 0, 800, 370);
@@ -219,6 +209,16 @@ var L4_Schneelandschaft;
             crc2.closePath();
             crc2.fillStyle = _topColor;
             crc2.fill();
+        }
+        function animate() {
+            console.log("Animate called");
+            crc2.putImageData(imgData, 0, 0);
+            for (let i = 0; i < flockeNumber; i++) {
+                x[i] = 0 + Math.random() * canvas.width;
+                y[i] = 0 + Math.random() * 600;
+                drawFlocke(x[i], y[i]);
+            }
+            window.setTimeout(animate, 30); // Geschwindigkeit
         }
         // Schneeflocken
         function drawFlocke(_x, _y) {

@@ -28,14 +28,14 @@ namespace L4_Schneelandschaft {
 
         console.log("setTimeout");
         animate();
-        let skiNumber: number = 7;
+        let skiNumber: number = 4;
         for (let i: number = 0; i < skiNumber; i++) {
             ski[i] = {
                 skiX: 5,
                 skiY: 1,
                 skidX: Math.random() * 5,
                 skidY: Math.random() * 2,
-                color: "hsl(" + Math.random() * -100 + ", 60%, 70%)"
+                color: "hsl(" + Math.random() * -120 + ", 60%, 70%)"
             };
 
         }
