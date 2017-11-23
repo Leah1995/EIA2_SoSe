@@ -4,34 +4,42 @@ var Classes;
     let skiNumber = 4;
     let flockeNumber = 20;
     let ski = [];
-    let tree = [];
     Classes.flocken = [];
     //    for (let i: number = 0; i < 10; i++) {
     //        let b: Baum1 = new Baum1(200, 200);
     //        b.draw();
     //        tree.push(b);
     //    }
+    console.log("1");
     let imgData;
+    //
     function init(_event) {
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0]; //das erste von der Liste von elements        
         Classes.crc2 = canvas.getContext("2d");
         Classes.crc2.fillRect(0, 0, canvas.width, canvas.height);
+        console.log("INIT MID");
         for (let i = 0; i < skiNumber; i++) {
+            console.log("ski " + i);
             let s = new Classes.Ski(65, 183);
             ski[i] = s;
         }
         //Fertige Landschaft wird gespeichert
         imgData = Classes.crc2.getImageData(0, 0, Classes.crc2.canvas.width, Classes.crc2.canvas.height);
+        console.log("postImage");
     } //init
+    //funktionsaufruf
     function animate() {
+        console.log("anim");
         Classes.crc2.putImageData(imgData, 0, 0); //gespeichertes Bild verwenden
         for (let i = 0; i < skiNumber; i++) {
             let s = ski[i];
         }
         window.setTimeout(animate, 20);
+        console.log("TimeOut");
     }
     // Sky
+    Classes.crc2.beginPath();
     Classes.crc2.fillStyle = "#ccf5ff";
     Classes.crc2.fillRect(0, 0, 800, 370);
     //Skilift
@@ -73,6 +81,7 @@ var Classes;
     Classes.crc2.arc(690, 70, 30, 0, 2 * Math.PI);
     Classes.crc2.fillStyle = "#ffffb3";
     Classes.crc2.fill();
+    console.log("MiddleDrawDaShiiit");
     // Wolke 1
     Classes.crc2.beginPath();
     Classes.crc2.arc(120, 70, 30, 0, 2 * Math.PI);
@@ -156,5 +165,6 @@ var Classes;
     Classes.crc2.fillRect(0, 400, 800, 200);
     Classes.crc2.fillStyle = "#f2f2f2";
     Classes.crc2.fillRect(0, 380, 800, 20);
+    animate();
 })(Classes || (Classes = {}));
 //# sourceMappingURL=main.js.map

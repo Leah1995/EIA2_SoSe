@@ -5,7 +5,7 @@ namespace Classes {
     let skiNumber: number = 4;
     let flockeNumber: number = 20;
     let ski: Ski[] = [];
-    let tree: Trees[] = [];
+    //let tree: Trees[] = [];
 
 
     export let targetX: number;
@@ -18,7 +18,11 @@ namespace Classes {
     //        tree.push(b);
     //    }
 
+    console.log("1");
+
     let imgData: ImageData;
+    //
+
 
     function init(_event: Event): void {
         let canvas: HTMLCanvasElement;
@@ -26,27 +30,42 @@ namespace Classes {
         crc2 = canvas.getContext("2d");
         crc2.fillRect(0, 0, canvas.width, canvas.height);
 
+
+
+        console.log("INIT MID");
         for (let i: number = 0; i < skiNumber; i++) {
+            console.log("ski " + i);
             let s: Ski = new Ski(65, 183);
             ski[i] = s;
         }
 
         //Fertige Landschaft wird gespeichert
+
         imgData = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
+        console.log("postImage");
 
     } //init
 
+    //funktionsaufruf
+
+
+
     function animate(): void {
+        console.log("anim");
         crc2.putImageData(imgData, 0, 0); //gespeichertes Bild verwenden
         for (let i: number = 0; i < skiNumber; i++) {
             let s: Ski = ski[i];
 
         }
+
+
         window.setTimeout(animate, 20);
+        console.log("TimeOut");
     }
 
 
     // Sky
+    crc2.beginPath();
     crc2.fillStyle = "#ccf5ff";
     crc2.fillRect(0, 0, 800, 370);
 
@@ -92,6 +111,9 @@ namespace Classes {
     crc2.arc(690, 70, 30, 0, 2 * Math.PI);
     crc2.fillStyle = "#ffffb3";
     crc2.fill();
+
+
+    console.log("MiddleDrawDaShiiit");
 
     // Wolke 1
     crc2.beginPath();
@@ -179,5 +201,5 @@ namespace Classes {
     crc2.fillStyle = "#f2f2f2";
     crc2.fillRect(0, 380, 800, 20);
 
-
+    animate();
 }

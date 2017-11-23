@@ -1,10 +1,14 @@
 namespace L4_Schneelandschaft {
     window.addEventListener("load", init);
-    let crc2: CanvasRenderingContext2D;
+    
+       
+    
+    export let crc2: CanvasRenderingContext2D;
 
     // Flockenarray
     let x: number[] = [];
     let y: number[] = [];
+   
 
     let flockeNumber: number = 20;
 
@@ -14,7 +18,7 @@ namespace L4_Schneelandschaft {
         let canvas: HTMLCanvasElement;
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
-
+       //let tester: SkiF = new SkiF(0,0);
         // Sky
         crc2.fillStyle = "#ccf5ff";
         crc2.fillRect(0, 0, 800, 370);
@@ -61,6 +65,11 @@ namespace L4_Schneelandschaft {
         crc2.fillStyle = "#F8FCFE";
         crc2.fillRect(170, 230, 100, 70);
 
+
+
+       // tester.drawSkiF(tester);
+        
+        
         // Sonne
         crc2.beginPath();
         crc2.arc(690, 70, 45, 0, 2 * Math.PI); // x, y, size
@@ -156,6 +165,9 @@ namespace L4_Schneelandschaft {
         crc2.fillRect(0, 400, 800, 200);
         crc2.fillStyle = "#f2f2f2";
         crc2.fillRect(0, 380, 800, 20);
+
+        //Test Skiier
+
 
         // Bäume zufällig hinstellen
         for (let i: number = 0; i < 20; i++) {
