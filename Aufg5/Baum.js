@@ -31,6 +31,6 @@ var Classes;
             }
         }
     }
-    Classes.Trees = Trees;
+    Classes.Trees = Trees; // Export-Classes
 })(Classes || (Classes = {}));
 //# sourceMappingURL=Baum.js.map

@@ -10,7 +10,6 @@ var L4_Schneelandschaft;
         let canvas;
         canvas = document.getElementsByTagName("canvas")[0];
         L4_Schneelandschaft.crc2 = canvas.getContext("2d");
-        //let tester: SkiF = new SkiF(0,0);
         // Sky
         L4_Schneelandschaft.crc2.fillStyle = "#ccf5ff";
         L4_Schneelandschaft.crc2.fillRect(0, 0, 800, 370);
