@@ -10,17 +10,17 @@ namespace Aufgabe6 {
         }
 
         update(): void {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
 
-        move(): void {
+        moving(): void {
             this.x += Math.random() * 10 + 10;
             this.y += Math.random() *  0.01 - 0.01;
         }
 
-        comeBack(): void {
+        return(): void {
             if (this.x > 850) {
                 this.x = 0;
             }

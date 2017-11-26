@@ -5,15 +5,15 @@ var Aufgabe6;
             super(_x, _y);
         }
         update() {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
-        move() {
+        moving() {
             this.x += Math.random() * 10 + 10;
             this.y += Math.random() * 0.01 - 0.01;
         }
-        comeBack() {
+        return() {
             if (this.x > 850) {
                 this.x = 0;
             }

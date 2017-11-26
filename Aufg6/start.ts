@@ -7,7 +7,7 @@ namespace Aufgabe6 {
 
     window.addEventListener("load", init);
 
-    // Initalisierung
+    // Initialisierung
     function init(): void {
         
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];

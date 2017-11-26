@@ -3,7 +3,7 @@ var Aufgabe6;
     let object = [];
     let image;
     window.addEventListener("load", init);
-    // Initalisierung
+    // Initialisierung
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);

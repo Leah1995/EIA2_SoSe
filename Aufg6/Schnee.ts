@@ -9,18 +9,18 @@ namespace Aufgabe6 {
 
         // Verweisung auf Eigenschaften der Objekte
         update(): void {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
 
         // Geschwindigkeit
-        move(): void {
+        moving(): void {
             this.y += Math.random() * 20;
         }
 
         // Schneeflocken tauchen wieder auf
-        comeBack(): void {
+        return(): void {
             if (this.y > 600) {
                 this.y = 0;
             }

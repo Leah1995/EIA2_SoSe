@@ -15,26 +15,15 @@ namespace Aufgabe6 {
         }
 
         update(): void {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
 
-        move(): void {
-            // vorher definiert
-        }
-
-        comeBack(): void {
-            // vorher definiert
-        }
-
-        draw(): void {
-            // vorher definiert
-        }
-        
-        setRandomColor(): void {
-            // vorher definiert
-        }
+        moving(): void {/* vorher definiert */}
+        return(): void {/* vorher definiert */}
+        draw(): void {/* vorher definiert */}        
+        setRandomColor(): void {/* vorher definiert */}
 
     } // exportiert
 } // Namespace

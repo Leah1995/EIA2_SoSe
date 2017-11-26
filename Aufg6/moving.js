@@ -9,22 +9,14 @@ var Aufgabe6;
             this.y = _y;
         }
         update() {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
-        move() {
-            // vorher definiert
-        }
-        comeBack() {
-            // vorher definiert
-        }
-        draw() {
-            // vorher definiert
-        }
-        setRandomColor() {
-            // vorher definiert
-        }
+        moving() { }
+        return() { }
+        draw() { }
+        setRandomColor() { }
     }
     Aufgabe6.MovingObject = MovingObject; // exportiert
 })(Aufgabe6 || (Aufgabe6 = {})); // Namespace

@@ -7,16 +7,16 @@ var Aufgabe6;
         }
         // Verweisung auf Eigenschaften der Objekte
         update() {
-            this.move();
-            this.comeBack();
+            this.moving();
+            this.return();
             this.draw();
         }
         // Geschwindigkeit
-        move() {
+        moving() {
             this.y += Math.random() * 20;
         }
         // Schneeflocken tauchen wieder auf
-        comeBack() {
+        return() {
             if (this.y > 600) {
                 this.y = 0;
             }
